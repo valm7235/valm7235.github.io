@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Conseillers IA Suisse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            border-radius: 20px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .contact-content {
+            background: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-intro h2 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .contact-intro p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .contact-form {
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        .submit-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #1e40af;
+        }
+
+        .info-card h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .info-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .legal-notice {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .legal-notice h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .success-message {
+            display: none;
+            background: #f0fdf4;
+            color: #166534;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #bbf7d0;
+        }
+
+        .error-message {
+            display: none;
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: 1px solid #fecaca;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px 0;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #1e40af;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                padding: 30px 20px;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <script src="navbar.js"></script>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Contactez-nous</h1>
+            <p>Une question ? Notre équipe vous répond sous 24-48h</p>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-intro">
+                <h2>📧 Formulaire de Contact</h2>
+                <p>Remplissez le formulaire ci-dessous et nous vous répondrons rapidement</p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✅ Votre message a été envoyé avec succès ! Nous vous répondrons sous 24-48h.
+            </div>
+
+            <div class="error-message" id="errorMessage">
+                ❌ Une erreur s'est produite. Veuillez réessayer ou contactez-nous directement à support@conseillers-ia.ch
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Prénom *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Nom *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Sujet *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">-- Sélectionnez un sujet --</option>
+                        <option value="question-avant-achat">Question avant achat</option>
+                        <option value="support-technique">Support technique</option>
+                        <option value="probleme-commande">Problème de commande</option>
+                        <option value="demande-remboursement">Demande de remboursement</option>
+                        <option value="question-fiscale">Question fiscale</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Décrivez votre question ou problème en détail..." required></textarea>
+                </div>
+
+                <div class="legal-notice">
+                    <h3>🔒 Protection de vos données</h3>
+                    <p>Conformément à notre politique de confidentialité et au RGPD, vos données sont utilisées uniquement pour répondre à votre demande. Aucun spam, aucun partage avec des tiers.</p>
+                </div>
+
+                <button type="submit" class="submit-button" id="submitButton">
+                    Envoyer le Message
+                </button>
+            </form>
+
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📧 Email</h3>
+                    <p>support@conseillers-ia.ch</p>
+                </div>
+                <div class="info-card">
+                    <h3>⏰ Délai de réponse</h3>
+                    <p>24-48h ouvrées</p>
+                </div>
+                <div class="info-card">
+                    <h3>🕒 Disponibilité</h3>
+                    <p>Lundi-Vendredi 9h-18h</p>
+                </div>
+            </div>
+
+            <div class="legal-notice">
+                <h3>⚖️ Conformité légale</h3>
+                <p>Ce formulaire est conforme à la loi suisse sur la protection des données (LPD) et au RGPD. Vos données sont hébergées en Suisse et ne sont jamais vendues ni partagées.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="terms.html">Conditions Générales</a>
+                <a href="privacy.html">Politique de Confidentialité</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2024 Conseillers IA Suisse. Tous droits réservés.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Réinitialiser les messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Valider le formulaire
+            const formData = new FormData(this);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            if (!firstName || !lastName || !email || !subject || !message) {
+                errorMessage.textContent = '❌ Veuillez remplir tous les champs obligatoires.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            // Valider l'email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.textContent = '❌ Veuillez entrer une adresse email valide.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+            
+            // Simuler l'envoi du formulaire
+            submitButton.disabled = true;
+            submitButton.textContent = 'Envoi en cours...';
+            
+            setTimeout(() => {
+                // Dans un vrai système, vous enverriez les données à votre serveur ici
+                console.log('Formulaire envoyé:', {
+                    firstName,
+                    lastName,
+                    email,
+                    subject,
+                    message
+                });
+                
+                // Afficher le message de succès
+                successMessage.style.display = 'block';
+                this.reset();
+                submitButton.disabled = false;
+                submitButton.textContent = 'Envoyer le Message';
+                
+                // Faire défiler vers le message de succès
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+                
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation - Conseillers IA Suisse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .confirmation-box {
+            background: #fff;
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .success-icon {
+            font-size: 80px;
+            color: #10b981;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #1e40af;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .message {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .email-note {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-weight: 500;
+        }
+
+        .products-preview {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .products-preview h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-icon {
+            font-size: 32px;
+            margin-right: 15px;
+            width: 50px;
+            text-align: center;
+        }
+
+        .product-info h4 {
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .product-info p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .support-info {
+            background: #f0f9ff;
+            color: #0369a1;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .cta-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .timer {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <script src="navbar.js"></script>
+    
+    <div class="confirmation-box">
+        <div class="success-icon">✅</div>
+        <h1>Paiement Confirmé !</h1>
+        
+        <div class="message">
+            Félicitations ! Vous possédez maintenant vos 3 conseillers IA suisses.<br>
+            <strong class="timer">Redirection vers vos produits dans <span id="countdown">10</span> secondes...</strong>
+        </div>
+        
+        <div class="products-preview">
+            <h3>🎁 Vos Produits Numériques</h3>
+            
+            <div class="product-item">
+                <div class="product-icon">🏦</div>
+                <div class="product-info">
+                    <h4>Conseiller Fiscal IA</h4>
+                    <p>Optimisation fiscale et économies d'impôts</p>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-icon">📈</div>
+                <div class="product-info">
+                    <h4>Planificateur Financier IA</h4>
+                    <p>Stratégies d'investissement et patrimoine</p>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-icon">⚖️</div>
+                <div class="product-info">
+                    <h4>Assistant Conformité IA</h4>
+                    <p>Conformité légale pour entreprises</p>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-icon">📖</div>
+                <div class="product-info">
+                    <h4>Guide d'Utilisation Complet</h4>
+                    <p>Instructions et astuces professionnelles</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="email-note">
+            📧 <strong>Important :</strong> Vérifiez votre boîte email (et les spams) dans les prochaines minutes. Vos conseillers IA et le guide complet vous ont été envoyés.
+        </div>
+        
+        <div class="support-info">
+            💬 Besoin d'aide ? Contactez support@conseillers-ia.ch pour toute question.
+        </div>
+        
+        <a href="download-secure-2026.html" class="cta-button">Télécharger Maintenant</a>
+        
+        <div class="footer-note">
+            Transaction sécurisée par Stripe<br>
+            Référence: #CIA-2024-001<br>
+            <script>
+                document.write(new Date().toLocaleDateString('fr-CH'));
+            </script>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
+                <a href="index.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Accueil</a>
+                <a href="terms.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Conditions</a>
+                <a href="privacy.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Confidentialité</a>
+                <a href="contact.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Contact</a>
+            </div>
+            <p style="color: #9ca3af; font-size: 12px;">&copy; 2024 Conseillers IA Suisse</p>
+        </div>
+    </div>
+
+    <script>
+        // Compte à rebours avec débogage
+        console.log('Confirmation page loaded - starting countdown');
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            countdown--;
+            console.log('Countdown:', countdown);
+            countdownElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                console.log('Countdown finished - redirecting to download-secure-2026.html');
+                clearInterval(interval);
+                // Double redirection pour assurer la compatibilité
+                window.location.replace('download-secure-2026.html');
+                // Fallback au cas où
+                setTimeout(() => {
+                    window.location.href = 'download-secure-2026.html';
+                }, 100);
+            }
+        }, 1000);
+        
+        // Bouton de téléchargement immédiat
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            console.log('Manual download button clicked');
+            e.preventDefault();
+            window.location.href = 'download-secure-2026.html';
+        });
+    </script>
+</body>
+</html>

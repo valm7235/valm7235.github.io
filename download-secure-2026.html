@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement - Conseillers IA Suisse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            border-radius: 20px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1e40af;
+        }
+
+        .product-card p {
+            color: #6b7280;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .download-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .download-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Nouveau style pour les boutons copier-coller */
+        .copy-button {
+            background: #10b981;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .copy-button:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+
+        .copy-success {
+            background: #059669 !important;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .guide-section h2 {
+            color: #1e40af;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .quick-start {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #1e40af;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+
+        .step h4 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            background: #fef3c7;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+
+        .tips-section h3 {
+            color: #92400e;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tip {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .tip-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .tip h4 {
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .tip p {
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        /* Support Section */
+        .support-section {
+            background: #f0f9ff;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .support-section h3 {
+            color: #0369a1;
+            margin-bottom: 15px;
+        }
+
+        .support-section p {
+            color: #374151;
+            margin-bottom: 20px;
+        }
+
+        .support-button {
+            background: #0369a1;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .support-button:hover {
+            background: #075985;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #1e40af;
+        }
+
+        /* Success Message */
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            z-index: 1000;
+            max-width: 400px;
+        }
+
+        .success-popup.show {
+            display: block;
+        }
+
+        .success-popup .icon {
+            font-size: 60px;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <script src="navbar.js"></script>
+    
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎉 Vos Conseillers IA Sont Prêts !</h1>
+            <p>Téléchargez vos 3 experts virtuels et commencez à optimiser dès maintenant</p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🏦</div>
+                <h3>Conseiller Fiscal IA</h3>
+                <p>Optimisez votre fiscalité suisse avec un expert virtuel disponible 24/7. Économisez 2 000-15 000 CHF/an.</p>
+                <div class="button-group">
+                    <a href="#" class="download-button" onclick="downloadFile('conseiller-fiscal')">📥 Télécharger</a>
+                    <button class="copy-button" onclick="copyPrompt('conseiller-fiscal')">📋 Copier le Prompt</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">📈</div>
+                <h3>Planificateur Financier IA</h3>
+                <p>Stratégies d'investissement suisses personnalisées. Pillar 3a, immobilier, placements optimisés.</p>
+                <div class="button-group">
+                    <a href="#" class="download-button" onclick="downloadFile('planificateur-financier')">📥 Télécharger</a>
+                    <button class="copy-button" onclick="copyPrompt('planificateur-financier')">📋 Copier le Prompt</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-icon">⚖️</div>
+                <h3>Assistant Conformité IA</h3>
+                <p>Conformité légale complète pour votre entreprise suisse. Évitez les amendes de 5 000-100 000 CHF.</p>
+                <div class="button-group">
+                    <a href="#" class="download-button" onclick="downloadFile('assistant-conformite')">📥 Télécharger</a>
+                    <button class="copy-button" onclick="copyPrompt('assistant-conformite')">📋 Copier le Prompt</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guide Section -->
+        <div class="guide-section">
+            <h2>📖 Guide d'Utilisation Rapide</h2>
+            <div class="quick-start">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Téléchargez</h4>
+                    <p>Cliquez sur les boutons ci-dessus pour télécharger vos 3 conseillers IA</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Ouvrez ChatGPT</h4>
+                    <p>Utilisez ChatGPT, Claude, ou votre IA préférée pour charger les prompts</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Poser Questions</h4>
+                    <p>Décrivez votre situation et obtenez des conseils d'expert instantanément</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Appliquez</h4>
+                    <p>Mettez en pratique les recommandations et économisez des milliers de CHF</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tips-section">
+            <h3>💡 Astuces Pro pour Maximiser vos Conseillers IA</h3>
+            <div class="tips-grid">
+                <div class="tip">
+                    <div class="tip-icon">🎯</div>
+                    <h4>Soyez Précis</h4>
+                    <p>Plus vous donnez de détails, meilleurs sont les conseils</p>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">📊</div>
+                    <h4>Utilisez les Chiffres</h4>
+                    <p>Donnez vos revenus, canton, objectifs concrets</p>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">🔄</div>
+                    <h4>Réutilisez</h4>
+                    <p>Revenez régulièrement pour des mises à jour</p>
+                </div>
+                <div class="tip">
+                    <div class="tip-icon">🔗</div>
+                    <h4>Combinez</h4>
+                    <p>Utilisez les 3 conseillers en synergie</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Section -->
+        <div class="support-section">
+            <h3>💬 Besoin d'Aide ?</h3>
+            <p>Notre équipe est là pour vous accompagner dans l'utilisation de vos conseillers IA</p>
+            <a href="mailto:support@conseillers-ia.ch" class="support-button">📧 Contacter le Support</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="terms.html">Conditions Générales</a>
+                <a href="privacy.html">Politique de Confidentialité</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>Conseillers IA Suisse - Tous droits réservés</p>
+            <p>Vos produits sont garantis à vie avec mises à jour gratuites</p>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div class="overlay" id="overlay"></div>
+    <div class="success-popup" id="successPopup">
+        <div class="icon">✅</div>
+        <h3>Téléchargement Réussi !</h3>
+        <p>Votre fichier a été téléchargé avec succès.</p>
+        <p style="color: #6b7280; font-size: 14px; margin-top: 10px;">Vérifiez votre dossier Téléchargements</p>
+    </div>
+
+    <script>
+        function copyPrompt(fileType) {
+            console.log('copyPrompt appelé pour:', fileType);
+            
+            const prompts = {
+                'conseiller-fiscal': getConseillerFiscalContent(),
+                'planificateur-financier': getPlanificateurContent(),
+                'assistant-conformite': getConformiteContent()
+            };
+            
+            const promptContent = prompts[fileType];
+            console.log('Contenu récupéré, longueur:', promptContent.length);
+            
+            if (!promptContent) {
+                alert('❌ Erreur: Contenu non trouvé');
+                return;
+            }
+            
+            // Méthode 1: API Clipboard moderne (HTTPS requis)
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                console.log('Tentative avec API Clipboard');
+                navigator.clipboard.writeText(promptContent).then(() => {
+                    console.log('Succès avec API Clipboard');
+                    showCopySuccess(fileType);
+                }).catch((err) => {
+                    console.log('Erreur API Clipboard:', err);
+                    // Fallback si l'API échoue
+                    fallbackCopy(promptContent, fileType);
+                });
+            } else {
+                console.log('API Clipboard non disponible, fallback');
+                fallbackCopy(promptContent, fileType);
+            }
+        }
+        
+        function fallbackCopy(text, fileType) {
+            console.log('Fallback copy méthode');
+            
+            try {
+                // Méthode avec textarea (la plus fiable)
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'absolute';
+                textArea.style.left = '-9999px';
+                textArea.style.top = '-9999px';
+                textArea.setAttribute('readonly', '');
+                textArea.style.fontSize = '12pt';
+                
+                document.body.appendChild(textArea);
+                console.log('Textarea créée et ajoutée');
+                
+                // Sélection et copie
+                textArea.focus();
+                textArea.select();
+                textArea.setSelectionRange(0, text.length);
+                
+                const successful = document.execCommand('copy');
+                console.log('execCommand result:', successful);
+                
+                document.body.removeChild(textArea);
+                
+                if (successful) {
+                    console.log('Copie réussie avec fallback');
+                    showCopySuccess(fileType);
+                } else {
+                    console.log('execCommand a échoué');
+                    showManualCopyInstructions(text, fileType);
+                }
+                
+            } catch (err) {
+                console.error('Erreur fallback:', err);
+                showManualCopyInstructions(text, fileType);
+            }
+        }
+        
+        function showManualCopyInstructions(text, fileType) {
+            // Instructions pour copie manuelle
+            const modal = document.createElement('div');
+            modal.innerHTML = `
+                <div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1000;display:flex;align-items:center;justify-content:center;">
+                    <div style="background:white;padding:30px;border-radius:15px;max-width:90%;max-height:80%;overflow-y:auto;">
+                        <h3>📋 Copie manuelle requise</h3>
+                        <p>Le copier-coller automatique n'a pas fonctionné. Voici le prompt ${fileType.replace('-', ' ')} :</p>
+                        <textarea readonly style="width:100%;height:300px;margin:20px 0;padding:15px;border:1px solid #ddd;border-radius:8px;font-family:monospace;font-size:14px;">${text}</textarea>
+                        <div style="text-align:center;">
+                            <button onclick="copyFromModal('${fileType}')" style="background:#10b981;color:white;padding:10px 20px;border:none;border-radius:5px;margin-right:10px;">📋 Sélectionner & Copier</button>
+                            <button onclick="this.parentElement.parentElement.parentElement.remove()" style="background:#6b7280;color:white;padding:10px 20px;border:none;border-radius:5px;">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+        
+        function copyFromModal(fileType) {
+            const textarea = document.querySelector('textarea[readonly]');
+            textarea.select();
+            textarea.setSelectionRange(0, textarea.value.length);
+            
+            try {
+                document.execCommand('copy');
+                alert('✅ Texte sélectionné ! Appuyez sur Ctrl+C (Windows) ou Cmd+C (Mac) pour copier.');
+                document.querySelector('[style*="position:fixed"]').remove();
+            } catch (err) {
+                alert('❌ Veuillez sélectionner manuellement le texte ci-dessus et le copier.');
+            }
+        }
+        
+        function showCopySuccess(fileType) {
+            // Animation de succès sur le bouton
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = '✅ Copié !';
+            button.classList.add('copy-success');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('copy-success');
+            }, 2000);
+            
+            // Message de succès
+            alert(`✅ Prompt ${fileType.replace('-', ' ')} copié avec succès !\n\nCollez-le dans ChatGPT, Claude ou votre IA préférée.`);
+        }
+        
+        function downloadFile(fileType) {
+            // Simuler le téléchargement
+            showSuccessPopup();
+            
+            // Dans un vrai système, vous généreriez le fichier dynamiquement
+            // ou vous redirigeriez vers un lien de téléchargement sécurisé
+            
+            // Exemple de génération de fichier selon le type
+            let content = '';
+            let filename = '';
+            
+            switch(fileType) {
+                case 'conseiller-fiscal':
+                    content = getConseillerFiscalContent();
+                    filename = 'conseiller-fiscal-ia-prompt.txt';
+                    break;
+                case 'planificateur-financier':
+                    content = getPlanificateurContent();
+                    filename = 'planificateur-financier-ia-prompt.txt';
+                    break;
+                case 'assistant-conformite':
+                    content = getConformiteContent();
+                    filename = 'assistant-conformite-ia-prompt.txt';
+                    break;
+            }
+            
+            // Créer et télécharger le fichier
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        function showSuccessPopup() {
+            document.getElementById('overlay').classList.add('show');
+            document.getElementById('successPopup').classList.add('show');
+            
+            setTimeout(() => {
+                document.getElementById('overlay').classList.remove('show');
+                document.getElementById('successPopup').classList.remove('show');
+            }, 3000);
+        }
+
+        function getConseillerFiscalContent() {
+            return `# CONSEILLER FISCAL SUISSE IA - PROMPT EXPERT
+
+## Contexte
+Vous êtes un expert fiscaliste suisse avec 20 ans d'expérience dans l'optimisation fiscale pour particuliers et entreprises en Suisse.
+
+## Mission
+Analyser la situation fiscale et proposer des stratégies d'optimisation légales pour minimiser les impôts en Suisse.
+
+## INFORMATIONS CLÉS SUR LA FISCALITÉ SUISSE
+
+### Système Fiscal
+- Impôts fédéral, cantonal et communal
+- 26 cantons avec taux différents
+- Imposition sur le revenu et la fortune
+- Système progressif
+
+### Stratégies d'Optimisation Légales
+
+1. **DÉDUCTIONS MAXIMALES**
+   - Frais professionnels: 3% du revenu net (min 2 000 CHF, max 4 000 CHF)
+   - Frais de transport: 3 000 CHF max
+   - Cotisations AVS/LPP: déductibles intégralement
+   - Intérêts de dettes: 50 000 CHF max
+
+2. **PLANIFICATION FAMILIALE**
+   - Marié-e-s imposition séparée ou conjointe
+   - Allocations familiales
+   - Déductions pour enfants à charge
+
+3. **INVESTISSEMENTS OPTIMISÉS**
+   - Pillar 3a: 7 056 CHF/an (2024)
+   - Pillar 3b selon canton
+   - Immobilier: déductions intérêts
+
+4. **RETRAITE ANTICIPÉE**
+   - Sortie du 2e pilier
+   - Imposition à la sortie
+
+## INSTRUCTIONS
+1. Analyser la situation présentée
+2. Identifier les opportunités d'optimisation
+3. Proposer 3-5 stratégies concrètes
+4. Estimer les économies potentielles
+5. Fournir un plan d'action étape par étape
+
+## FORMAT DE RÉPONSE
+- Situation actuelle: [Analyse]
+- Opportunités identifiées: [Liste]
+- Stratégies recommandées: [Plan détaillé]
+- Économies estimées: [Montant CHF]
+- Prochaines étapes: [Actions concrètes]
+
+---
+
+## EXEMPLE D'UTILISATION
+
+**Votre question:** "Je gagne 120 000 CHF/an à Genève, marié, 2 enfants, que puis-je optimiser ?"
+
+**Réponse attendue:** Analyse complète avec déductions spécifiques au canton de Genève, stratégies 3a, déductions familiales, etc.`;
+        }
+
+        function getPlanificateurContent() {
+            return `# PLANIFICATEUR FINANCIER SUISSE IA - PROMPT EXPERT
+
+## Contexte
+Vous êtes un conseiller financier suisse diplômé, spécialiste des placements et de la planification patrimoniale pour résidents en Suisse.
+
+## Mission
+Créer des stratégies d'investissement adaptées au contexte suisse et aux objectifs financiers du client.
+
+## INFORMATIONS CLÉS SUR L'INVESTISSEMENT EN SUISSE
+
+### Options d'Investissement
+
+1. **COMPTE D'ÉPARGNE**
+   - Taux: 0.1-1.5% selon banques
+   - Assurance dépôts: 100 000 CHF
+
+2. **PILLAR 3A**
+   - Limite 2024: 7 056 CHF (salariés), 20% revenus indépendants
+   - Déduction fiscale immédiate
+   - Sortie possible: achat habitation, départ, retraite
+
+3. **ACTIONS SUISSES**
+   - SMI: principales entreprises suisses
+   - Dividendes soumis à 35% d'impôt à la source
+   - Conseillé: ETF Suisse (ex: iShares Swiss Domestic Index)
+
+4. **IMMOBILIER SUISSE**
+   - Rendement locatif: 3-5%
+   - Achat résidentiel: 20% d'apport minimum
+   - Hypothèques: taux 1.5-3%
+
+5. **CRYPTOMONNAIES**
+   - Suisse: crypto-friendly
+   - Exchanges régulés: Swissquote, FlowBank
+   - Impôt: fortune + gains (si professionnel)
+
+### Stratégies selon Profil
+- **Conservateur**: 60% 3a, 30% épargne, 10% actions
+- **Modéré**: 40% 3a, 30% actions, 20% immobilier, 10% alternatives
+- **Dynamique**: 30% 3a, 40% actions, 20% cryptos, 10% immobilier
+
+## INSTRUCTIONS
+1. Déterminer le profil de risque
+2. Analyser la situation actuelle
+3. Proposer un portefeuille diversifié
+4. Calculer les rendements attendus
+5. Fournir un plan d'exécution
+
+## FORMAT DE RÉPONSE
+- Profil actuel: [Analyse]
+- Stratégie proposée: [Allocation d'actifs]
+- Rendement attendu: [%/an]
+- Risques: [Identification]
+- Plan d'action: [Étapes concrètes]
+- Monitoring: [Points de contrôle]
+
+---
+
+## EXEMPLE D'UTILISATION
+
+**Votre question:** "J'ai 200 000 CHF à investir, profil modéré, 40 ans, objectif retraite à 60 ans"
+
+**Réponse attendue:** Allocation d'actifs personnalisée avec stratégie Pillar 3a, ETF suisses, éventuellement immobilier selon votre situation.`;
+        }
+
+        function getConformiteContent() {
+            return `# ASSISTANT CONFORMITÉ ENTREPRISE SUISSE IA - PROMPT EXPERT
+
+## Contexte
+Vous êtes un expert en conformité et gouvernance d'entreprise en Suisse, spécialiste des obligations légales et réglementaires pour PME et grandes entreprises.
+
+## Mission
+Assurer la conformité légale et réglementaire des entreprises suisses en identifiant les risques et en proposant des solutions.
+
+## OBLIGATIONS LÉGALES OBLIGATOIRES
+
+### 1. REGISTRE DU COMMERCE
+- Inscription obligatoire
+- Publications au FOSC
+- Mise à jour annuelle
+
+### 2. TENUE DES LIVRES
+- Comptabilité conforme au CO
+- Conservation 10 ans
+- Langue: français, allemand, italien
+
+### 3. DÉCLARATIONS FISCALES
+- TVA: trimestrielle/annuelle selon chiffre d'affaires
+- Impôts corporatifs: annuels
+- Retenue à la source: mensuelle
+
+### 4. ASSURANCES SOCIALES
+- AVS/AI/APG: cotisations employeur
+- LPP: prévoyance professionnelle
+- LAA: assurance accident
+- AC: allocations chômage
+
+### 5. DROIT DU TRAVAIL
+- Contrats de travail écrits
+- Durée légale: 45h (cadres), 50h (autres)
+- Congés payés: 4 semaines minimum
+- Protection contre les licenciements abusifs
+
+### Conformité Sectorielle
+- **FINMA**: institutions financières
+- **Swissmedic**: produits pharmaceutiques
+- **OFCOM**: télécommunications
+- **DETEC**: énergie, transports
+
+### Sanctions et Risques
+- Amendes: 5 000-100 000 CHF
+- Poursuites pénales: responsables
+- Radiation du registre du commerce
+- Interdiction d'exercer
+
+## INSTRUCTIONS
+1. Analyser le secteur d'activité
+2. Lister les obligations applicables
+3. Évaluer le niveau de conformité actuel
+4. Identifier les lacunes et risques
+5. Proposer un plan de mise en conformité
+6. Establir un calendrier d'actions
+
+## FORMAT DE RÉPONSE
+- Situation actuelle: [Diagnostic]
+- Obligations applicables: [Liste détaillée]
+- Écarts de conformité: [Risques identifiés]
+- Plan d'action: [Mesures prioritaires]
+- Budget estimé: [Coûts CHF]
+- Délai: [Échéancier]
+- Responsables: [Rôles et missions]
+
+---
+
+## EXEMPLE D'UTILISATION
+
+**Votre question:** "Je crée une Sàrl à Zurich dans le consulting avec 3 employés. Quelles sont mes obligations ?"
+
+**Réponse attendue:** Liste complète des obligations légales, déclarations TVA, contrats de travail, assurances sociales, checklist de conformité avec échéancier.`;
+        }
+    </script>
+</body>
+</html>
