@@ -70,7 +70,7 @@ function createNewNavbar() {
                     </a>
                 </div>
                 <div class="nav-menu" id="navMenu">
-                    <a href="index" class="nav-link">Accueil</a>
+                    <a href="/" class="nav-link">Accueil</a>
                     <a href="contact" class="nav-link">Contact</a>
                     <a href="index#pricing" class="nav-link">Télécharger</a>
                 </div>
