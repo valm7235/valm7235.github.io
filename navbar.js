@@ -65,14 +65,14 @@ function createNewNavbar() {
         <nav class="navbar dynamic-navbar" id="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.html">
+                    <a href="index">
                         <div class="logo">Conseillers<span>IA</span> Suisse</div>
                     </a>
                 </div>
                 <div class="nav-menu" id="navMenu">
-                    <a href="index.html" class="nav-link">Accueil</a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                    <a href="download.html" class="nav-link">Télécharger</a>
+                    <a href="index" class="nav-link">Accueil</a>
+                    <a href="contact" class="nav-link">Contact</a>
+                    <a href="download" class="nav-link">Télécharger</a>
                 </div>
                 <div class="nav-toggle" id="navToggle">
                     <span class="bar"></span>

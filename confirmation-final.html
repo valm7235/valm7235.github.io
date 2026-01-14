@@ -215,10 +215,10 @@
 
         <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
             <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 15px;">
-                <a href="index.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Accueil</a>
-                <a href="terms.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Conditions</a>
-                <a href="privacy.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Confidentialité</a>
-                <a href="contact.html" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Contact</a>
+                <a href="index" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Accueil</a>
+                <a href="terms" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Conditions</a>
+                <a href="privacy" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Confidentialité</a>
+                <a href="contact" style="color: #9ca3af; text-decoration: none; font-size: 14px;">Contact</a>
             </div>
             <p style="color: #9ca3af; font-size: 12px;">&copy; 2024 Conseillers IA Suisse</p>
         </div>
@@ -236,10 +236,10 @@
             countdownElement.textContent = countdown;
             
             if (countdown <= 0) {
-                console.log('Countdown finished - redirecting to download-secure-2026.html');
+                console.log('Countdown finished - redirecting to download-secure-2026');
                 clearInterval(interval);
                 // Redirection simple et fiable
-                window.location.href = 'download-secure-2026.html';
+                window.location.href = 'download-secure-2026';
             }
         }, 1000);
         
@@ -247,7 +247,7 @@
         document.getElementById('downloadBtn').addEventListener('click', function(e) {
             console.log('Manual download button clicked');
             e.preventDefault();
-            window.location.href = 'download-secure-2026.html';
+            window.location.href = 'download-secure-2026';
         });
     </script>
 </body>
