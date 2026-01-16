@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Fiscalité Suisse pour Indépendants 2024 - Expert IA Suisse</title>
+    <meta name="description" content="Guide complet sur la fiscalité suisse pour indépendants. Déclaration d'impôts, déductions, impôt à la source et optimisation fiscale par canton.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero-guide {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-guide h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-guide .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #fff;
+            padding: 60px 0;
+            margin: 20px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1e40af;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #e0f2fe;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            color: #0369a1;
+            margin-bottom: 20px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1e40af;
+        }
+
+        .content-card h3 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .content-card p {
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .warning-box h4 {
+            margin-bottom: 10px;
+            color: #92400e;
+        }
+
+        .info-box {
+            background: #f0f9ff;
+            color: #0369a1;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .info-box h4 {
+            margin-bottom: 10px;
+            color: #0369a1;
+        }
+
+        /* Lists */
+        .content-list {
+            margin: 20px 0;
+        }
+
+        .content-list li {
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+
+        .content-list strong {
+            color: #1e40af;
+        }
+
+        /* Tables */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table th {
+            background: #1e40af;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid #dc2626;
+        }
+
+        .disclaimer h4 {
+            margin-bottom: 15px;
+            color: #991b1b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-guide h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content-card {
+                padding: 20px;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../navbar.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero-guide">
+        <div class="container">
+            <h1>Guide Fiscalité Suisse pour Indépendants 2024</h1>
+            <p class="subtitle">Tout ce que vous devez savoir sur la déclaration d'impôts, les déductions et l'optimisation fiscale en Suisse</p>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="content-section">
+        <div class="container">
+            <div class="toc">
+                <h3>Sommaire</h3>
+                <ul>
+                    <li><a href="#introduction">1. Introduction à la fiscalité suisse</a></li>
+                    <li><a href="#statut-independent">2. Statut d'indépendant en Suisse</a></li>
+                    <li><a href="#declaration-impots">3. La déclaration d'impôts</a></li>
+                    <li><a href="#deductions">4. Déductions possibles</a></li>
+                    <li><a href="#impot-source">5. Impôt à la source vs impôt ordinaire</a></li>
+                    <li><a href="#optimisation">6. Optimisation fiscale par canton</a></li>
+                    <li><a href="#erreurs">7. Erreurs fréquentes à éviter</a></li>
+                    <li><a href="#checklist">8. Checklist annuelle</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="content-section" id="introduction">
+        <div class="container">
+            <h2 class="section-title">Introduction à la fiscalité suisse</h2>
+            <p class="section-subtitle">Comprendre le système fiscal suisse est essentiel pour optimiser votre situation</p>
+
+            <div class="content-card">
+                <h3>Le système fiscal suisse en bref</h3>
+                <p>La Suisse applique un système fiscal federaliste avec trois niveaux d'imposition :</p>
+                <ul class="content-list">
+                    <li><strong>Impôt fédéral direct :</strong> Taux progressif de 0% à 11.5%</li>
+                    <li><strong>Impôt cantonal :</strong> Variable selon les cantons (7% à 25%)</li>
+                    <li><strong>Impôt communal :</strong> Calculé sur base de l'impôt cantonal (70% à 120%)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Bon à savoir</h4>
+                <p>Le taux d'imposition total varie significativement selon votre canton de résidence. La différence peut atteindre plusieurs milliers de francs par an pour un revenu identique.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statut d'indépendant -->
+    <section class="content-section" id="statut-independent">
+        <div class="container">
+            <h2 class="section-title">Statut d'indépendant en Suisse</h2>
+            <p class="section-subtitle">Les critères pour être considéré comme indépendant</p>
+
+            <div class="content-card">
+                <h3>Conditions pour le statut d'indépendant</h3>
+                <p>Pour être considéré comme indépendant en Suisse, vous devez remplir plusieurs conditions :</p>
+                <ul class="content-list">
+                    <li><strong>Indépendance économique :</strong> Vous assumez les risques économiques de votre activité</li>
+                    <li><strong>Indépendance organisationnelle :</strong> Vous organisez librement votre travail</li>
+                    <li><strong>Indépendance decisionnelle :</strong> Vous prenez vos décisions sans subordination</li>
+                    <li><strong>Pluralité de clients :</strong> Vous travaillez pour plusieurs clients (règle des 3 clients)</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Attention</h4>
+                <p>L'administration fiscale peut requalifier votre statut si vous ne remplissez pas toutes les conditions. Cela peut entraîner des pénalités et des cotisations sociales rétroactives.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Les différents types d'indépendants</h3>
+                <ul class="content-list">
+                    <li><strong>Indépendant sans personnel :</strong> Travailleur solo, pas d'employés</li>
+                    <li><strong>Indépendant avec personnel :</strong> Employe au moins une personne</li>
+                    <li><strong>Indépendant à titre accessoire :</strong> Activité secondaire (revenu < 2300 CHF/an)</li>
+                    <li><strong>Indépendant agricole :</strong> Secteur agricole avec régime spécifique</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Déclaration d'impôts -->
+    <section class="content-section" id="declaration-impots">
+        <div class="container">
+            <h2 class="section-title">La déclaration d'impôts pour indépendants</h2>
+            <p class="section-subtitle">Les éléments essentiels à déclarer</p>
+
+            <div class="content-card">
+                <h3>Revenus à déclarer</h3>
+                <ul class="content-list">
+                    <li><strong>Chiffre d'affaires brut :</strong> Total des factures émises</li>
+                    <li><strong>Revenus accessoires :</strong> Tous les revenus complémentaires</li>
+                    <li><strong>Rentes et pensions :</strong> Si applicable</li>
+                    <li><strong>Revenus mobiliers :</strong> Intérêts, dividendes</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>Charges déductibles professionnelles</h3>
+                <ul class="content-list">
+                    <li><strong>Frais de bureau :</strong> Loyer, électricité, internet</li>
+                    <li><strong>Matériel professionnel :</strong> Ordinateur, téléphone, logiciels</li>
+                    <li><strong>Frais de déplacement :</strong> Voiture, transports publics</li>
+                    <li><strong>Formations :</strong> Cours, séminaires, livres professionnels</li>
+                    <li><strong>Assurances professionnelles :</strong> RC, perte de gain</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>📋 Astuce</h4>
+                <p>Tenez une comptabilité précise dès le début de votre activité. Utilisez un logiciel de comptabilité ou faites appel à une fiduciaire pour éviter les erreurs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Déductions -->
+    <section class="content-section" id="deductions">
+        <div class="container">
+            <h2 class="section-title">Déductions possibles pour indépendants</h2>
+            <p class="section-subtitle">Maximisez vos déductions légalement</p>
+
+            <div class="content-card">
+                <h3>Déductions professionnelles classiques</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Catégorie</th>
+                            <th>Exemples</th>
+                            <th>Limites</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Frais de bureau</td>
+                            <td>Loyer, charges, internet, téléphone</td>
+                            <td>100% si bureau dédié, proportionnel si mixte</td>
+                        </tr>
+                        <tr>
+                            <td>Matériel</td>
+                            <td>Ordinateur, imprimante, logiciels</td>
+                            <td>Amortissement sur 3-5 ans</td>
+                        </tr>
+                        <tr>
+                            <td>Véhicule</td>
+                            <td>Essence, entretien, assurance</td>
+                            <td>Kilomètres professionnels justifiés</td>
+                        </tr>
+                        <tr>
+                            <td>Repas</td>
+                            <td>Déjeuners professionnels</td>
+                            <td>Fr. 30.- par jour max, justifiés</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-card">
+                <h3>Déductions personnelles</h3>
+                <ul class="content-list">
+                    <li><strong>Prévoyance professionnelle :</strong> Cotisations 3e pilier</li>
+                    <li><strong>Frais de garde :</strong> Pour enfants jusqu'à 14 ans</li>
+                    <li><strong>Primes d'assurance maladie :</strong> Part obligatoire</li>
+                    <li><strong>Intérêts hypothécaires :</strong> Dans la limite du revenu net</li>
+                    <li><strong>Dons :</strong> À des organisations reconnues</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impôt à la source -->
+    <section class="content-section" id="impot-source">
+        <div class="container">
+            <h2 class="section-title">Impôt à la source vs impôt ordinaire</h2>
+            <p class="section-subtitle">Comprendre la différence et ses implications</p>
+
+            <div class="content-card">
+                <h3>Impôt à la source</h3>
+                <p>Réservé aux étrangers sans permis C :</p>
+                <ul class="content-list">
+                    <li>Retenue directe sur le revenu</li>
+                    <li>Taux forfaitaire selon le canton</li>
+                    <li>Pas de déclaration d'impôts annuelle</li>
+                    <li>Revenu imposable > 120'000 CHF → déclaration ordinaire</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>Impôt ordinaire</h3>
+                <p>Pour résidents suisses et étrangers avec permis C :</p>
+                <ul class="content-list">
+                    <li>Déclaration d'impôts annuelle obligatoire</li>
+                    <li>Taux progressif selon le revenu</li>
+                    <li>Déductions possibles</li>
+                    <li>Calcul précis selon la situation personnelle</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Changement de statut</h4>
+                <p>Le passage de l'impôt à la source à l'impôt ordinaire peut significativement modifier votre charge fiscale. Planifiez cette transition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optimisation par canton -->
+    <section class="content-section" id="optimisation">
+        <div class="container">
+            <h2 class="section-title">Optimisation fiscale par canton</h2>
+            <p class="section-subtitle">Les différences majeures entre cantons</p>
+
+            <div class="content-card">
+                <h3>Cantons à fiscalité avantageuse pour indépendants</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Canton</th>
+                            <th>Taux moyen (100k CHF)</th>
+                            <th>Points forts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zoug</td>
+                            <td>~15%</td>
+                            <td>Fiscalité la plus basse de Suisse</td>
+                        </tr>
+                        <tr>
+                            <td>Schwyz</td>
+                            <td>~18%</td>
+                            <td>Faibles impôts, proximité de Zurich</td>
+                        </tr>
+                        <tr>
+                            <td>Nidwald</td>
+                            <td>~19%</td>
+                            <td>Régime attractif pour indépendants</td>
+                        </tr>
+                        <tr>
+                            <td>Vaud</td>
+                            <td>~25%</td>
+                            <td>Déductions généreuses pour indépendants</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Optimisation possible</h4>
+                <p>Certains cantons offrent des régimes spéciaux pour indépendants nouvellement installés. Renseignez-vous auprès de l'autorité fiscale cantonale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Erreurs fréquentes -->
+    <section class="content-section" id="erreurs">
+        <div class="container">
+            <h2 class="section-title">Erreurs fréquentes à éviter</h2>
+            <p class="section-subtitle">Les pièges classiques des indépendants</p>
+
+            <div class="warning-box">
+                <h4>❌ Erreurs à éviter absolument</h4>
+                <ul class="content-list">
+                    <li><strong>Sous-estimer les charges sociales :</strong> Prévoyez 10-15% de votre revenu brut</li>
+                    <li><strong>Mélanger finances perso et pro :</strong> Tenez des comptes séparés</li>
+                    <li><strong>Oublier les acomptes :</strong> Les impôts sont payés d'avance</li>
+                    <li><strong>Négliger la TVA :</strong> Dès 100'000 CHF de chiffre d'affaires</li>
+                    <li><strong>Pas de provision pour impôts :</strong> Mettez de l'argent de côté mensuellement</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>Conseils de prévention</h3>
+                <ul class="content-list">
+                    <li>Tenez une comptabilité mensuelle rigoureuse</li>
+                    <li>Consultez une fiduciaire pour le premier bilan</li>
+                    <li>Utilisez un logiciel de facturation professionnel</li>
+                    <li>Mettez en place un système de sauvegarde de vos documents</li>
+                    <li>Planifiez vos charges fiscales à l'avance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist -->
+    <section class="content-section" id="checklist">
+        <div class="container">
+            <h2 class="section-title">Checklist annuelle pour indépendants</h2>
+            <p class="section-subtitle">Ne rien oublier pour votre déclaration</p>
+
+            <div class="content-card">
+                <h3>Checklist par mois</h3>
+                <ul class="content-list">
+                    <li><strong>Janvier :</strong> Clôture comptable, bilan prévisionnel</li>
+                    <li><strong>Février :</strong> Préparation déclaration TVA</li>
+                    <li><strong>Mars :</strong> Dépôt déclaration TVA</li>
+                    <li><strong>Avril :</strong> Réception formulaire fiscal</li>
+                    <li><strong>Mai-Juin :</strong> Remplissage déclaration d'impôts</li>
+                    <li><strong>Juillet :</strong> Dépôt déclaration (délai selon canton)</li>
+                    <li><strong>Août-Décembre :</strong> Planification exercice suivant</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>Documents à conserver</h3>
+                <ul class="content-list">
+                    <li>Toutes les factures émises et reçues</li>
+                    <li>Relevés bancaires professionnels</li>
+                    <li>Contrats de travail avec clients</li>
+                    <li>Justificatifs de dépenses professionnelles</li>
+                    <li>Attestations d'assurance</li>
+                    <li>Documents de TVA</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Besoin d'aide pour optimiser votre fiscalité ?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">Nos prompts IA spécialisés peuvent vous aider à préparer votre déclaration et identifier les déductions optimales.</p>
+            <a href="/produit-pack-prompts.html" class="cta-button">Découvrir nos prompts IA fiscaux</a>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="content-section">
+        <div class="container">
+            <div class="disclaimer">
+                <h4>⚠️ Disclaimer important</h4>
+                <p>Ce guide est fourni à titre informatif uniquement et ne constitue pas un conseil fiscal personnalisé. La fiscalité suisse est complexe et varie selon votre situation personnelle et votre canton de résidence. Pour des conseils adaptés à votre cas, consultez toujours un professionnel de la fiscalité ou une fiduciaire agréée.</p>
+                <p>Les informations contenues dans ce guide sont basées sur la législation en vigueur en 2024 et peuvent être sujettes à modifications. Nous vous recommandons de vérifier régulièrement les mises à jour légales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: #fff; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+                <a href="/" style="color: #9ca3af; text-decoration: none;">Accueil</a>
+                <a href="/guides/" style="color: #9ca3af; text-decoration: none;">Guides</a>
+                <a href="terms" style="color: #9ca3af; text-decoration: none;">Conditions</a>
+                <a href="contact" style="color: #9ca3af; text-decoration: none;">Contact</a>
+            </div>
+            <p style="color: #9ca3af;">&copy; 2024 Expert IA Suisse. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

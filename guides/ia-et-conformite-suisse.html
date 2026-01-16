@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA et Conformité en Suisse - Guide des Obligations Légales 2024</title>
+    <meta name="description" content="Guide complet sur l'utilisation de l'IA en entreprise en Suisse. Conformité RGPD, obligations légales et meilleures pratiques pour PME.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero-guide {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-guide h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-guide .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #fff;
+            padding: 60px 0;
+            margin: 20px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1e40af;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        /* Compliance Cards */
+        .compliance-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1e40af;
+        }
+
+        .compliance-card h3 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .obligation-box {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .obligation-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        .checklist {
+            background: #f0fdf4;
+            color: #166534;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #22c55e;
+        }
+
+        .checklist h4 {
+            color: #166534;
+            margin-bottom: 10px;
+        }
+
+        .warning-box {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid #dc2626;
+        }
+
+        .warning-box h4 {
+            margin-bottom: 10px;
+            color: #991b1b;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-guide h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .compliance-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../navbar.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero-guide">
+        <div class="container">
+            <h1>IA et Conformité en Suisse</h1>
+            <p class="subtitle">Guide complet des obligations légales pour l'utilisation de l'intelligence artificielle en entreprise</p>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Introduction à la conformité IA en Suisse</h2>
+            <p class="section-subtitle">Pourquoi la conformité est cruciale pour votre entreprise</p>
+
+            <div class="compliance-card">
+                <h3>Le paysage juridique suisse de l'IA</h3>
+                <p>La Suisse n'a pas encore de loi spécifique sur l'IA, mais plusieurs réglementations existantes s'appliquent. L'approche suisse privilégie l'autorégulation et les principes éthiques.</p>
+            </div>
+
+            <div class="obligation-box">
+                <h4>📋 Obligations principales</h4>
+                <ul>
+                    <li>Respect du RGPD pour les données personnelles</li>
+                    <li>Conformité avec la Loi sur la protection des données (LPD)</li>
+                    <li>Respect des réglementations sectorielles spécifiques</li>
+                    <li>Transparence dans l'utilisation de l'IA</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- RGPD et IA -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">RGPD et utilisation de l'IA</h2>
+            <p class="section-subtitle">Comment respecter le Règlement Général sur la Protection des Données</p>
+
+            <div class="compliance-card">
+                <h3>Principes fondamentaux du RGPD appliqués à l'IA</h3>
+                <ul>
+                    <li><strong>Licéité :</strong> Avoir une base légale pour traiter les données</li>
+                    <li><strong>Loyauté :</strong> Être transparent sur l'utilisation de l'IA</li>
+                    <li><strong>Transparence :</strong> Informer clairement les personnes concernées</li>
+                    <li><strong>Minimisation :</strong> Ne collecter que les données nécessaires</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>✅ Checklist RGPD pour l'IA</h4>
+                <ul>
+                    <li>☐ Avoir identifié une base légale (consentement, contrat, intérêt légitime)</li>
+                    <li>☐ Informer les personnes du traitement automatisé</li>
+                    <li>☐ Permettre l'exercice des droits (accès, rectification, suppression)</li>
+                    <li>☐ Mettre en place des mesures de sécurité appropriées</li>
+                    <li>☐ Documenter les traitements dans un registre</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Attention particulière</h4>
+                <p>Les décisions automatisées qui ont un impact significatif sur les personnes nécessitent une attention particulière. Vous devez permettre le droit à l'intervention humaine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loi sur la protection des données -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Loi suisse sur la protection des données (LPD)</h2>
+            <p class="section-subtitle">La réglementation nationale complète le RGPD</p>
+
+            <div class="compliance-card">
+                <h3>Nouvelle LPD révisée (2022)</h3>
+                <p>La révision de la LPD s'inspire du RGPD et renforce les obligations des entreprises :</p>
+                <ul>
+                    <li>Obligation de notifier les violations de données graves</li>
+                    <li>Documentation des traitements à risque</li>
+                    <li>Impact sur les traitements de données sensibles</li>
+                    <li>Responsabilité renforcée des entreprises</li>
+                </ul>
+            </div>
+
+            <div class="obligation-box">
+                <h4>📋 Obligations spécifiques LPD</h4>
+                <ul>
+                    <li>Enregistrement auprès du Préposé fédéral à la protection des données</li>
+                    <li>Nomination d'un responsable de la protection des données si nécessaire</li>
+                    <li>Documentation des traitements de données</li>
+                    <li>Mesures techniques et organisationnelles appropriées</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparence et explicabilité -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Transparence et explicabilité de l'IA</h2>
+            <p class="section-subtitle">Le devoir d'information envers vos clients et employés</p>
+
+            <div class="compliance-card">
+                <h3>Principe de transparence</h3>
+                <p>En Suisse, l'approche privilégie la transparence volontaire mais certaines situations requièrent une information explicite :</p>
+                <ul>
+                    <li>Utilisation de chatbots sur votre site web</li>
+                    <li>Prise de décision automatisée affectant les clients</li>
+                    <li>Traitement de données sensibles</li>
+                    <li>Secteurs réglementés (finance, santé, etc.)</li>
+                </ul>
+            </div>
+
+            <div class="checklist">
+                <h4>✅ Bonnes pratiques de transparence</h4>
+                <ul>
+                    <li>☐ Mentionner clairement l'utilisation de l'IA dans vos conditions générales</li>
+                    <li>☐ Expliquer de manière compréhensible comment l'IA est utilisée</li>
+                    <li>☐ Informer sur les implications pour les personnes concernées</li>
+                    <li>☐ Permettre le choix de ne pas utiliser l'IA quand c'est possible</li>
+                    <li>☐ Fournir un contact humain pour les questions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsabilité et assurance -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Responsabilité et assurance</h2>
+            <p class="section-subtitle">Qui est responsable en cas de problème avec l'IA ?</p>
+
+            <div class="compliance-card">
+                <h3>Responsabilité juridique</h3>
+                <p>L'utilisation de l'IA n'exonère pas de la responsabilité. Vous restez responsable des décisions prises avec l'assistance de l'IA dans votre entreprise.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Points de vigilance</h4>
+                <ul>
+                    <li><strong>Responsabilité civile :</strong> Dommages causés à des tiers</li>
+                    <li><strong>Responsabilité pénale :</strong> Infractions commises via l'IA</li>
+                    <li><strong>Responsabilité professionnelle :</strong> Erreurs dans vos services</li>
+                    <li><strong>Responsabilité des administrateurs :</strong> Pour les décisions de l'entreprise</li>
+                </ul>
+            </div>
+
+            <div class="obligation-box">
+                <h4>📋 Assurance recommandée</h4>
+                <ul>
+                    <li>Responsabilité civile professionnelle étendue aux technologies</li>
+                    <li>Assurance cyber-risques pour les violations de données</li>
+                    <li>Couverture pour les interruptions de service</li>
+                    <li>Protection juridique pour les litiges technologiques</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secteurs spécifiques -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Conformité par secteur d'activité</h2>
+            <p class="section-subtitle">Des exigences spécifiques selon votre domaine</p>
+
+            <div class="compliance-card">
+                <h3>Finance et banque</h3>
+                <ul>
+                    <li>Conformité avec la Loi sur les banques et la réglementation FINMA</li>
+                    <li>Obligations de documentation et d'audit renforcées</li>
+                    <li>Exigences de transparence accrue pour les décisions algorithmiques</li>
+                    <li>Protection renforcée des données clients</li>
+                </ul>
+            </div>
+
+            <div class="compliance-card">
+                <h3>Santé et médical</h3>
+                <ul>
+                    <li>Respect de la Loi fédérale sur la protection des données médicales</li>
+                    <li>Conformité avec la Loi sur les professions médicales</li>
+                    <li>Autorisation nécessaire pour certains traitements de données sensibles</li>
+                    <li>Documentation médicale rigoureuse requise</li>
+                </ul>
+            </div>
+
+            <div class="compliance-card">
+                <h3>Commerce et e-commerce</h3>
+                <ul>
+                    <li>Respect de la Loi sur la protection des consommateurs</li>
+                    <li>Transparence dans les pratiques commerciales</li>
+                    <li>Protection des données clients et de paiement</li>
+                    <li>Conformité avec les règles de concurrence</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audit et documentation -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Audit et documentation</h2>
+            <p class="section-subtitle">Préparer votre entreprise aux contrôles éventuels</p>
+
+            <div class="checklist">
+                <h4>✅ Documentation à maintenir</h4>
+                <ul>
+                    <li>☐ Politique d'utilisation de l'IA dans l'entreprise</li>
+                    <li>☐ Registre des traitements de données personnelles</li>
+                    <li>☐ Analyses d'impact sur la protection des données (si requis)</li>
+                    <li>☐ Procédures de sécurité et d'incident</li>
+                    <li>☐ Consentements et informations aux personnes concernées</li>
+                    <li>☐ Contrats avec les fournisseurs d'IA</li>
+                    <li>☐ Formation du personnel sur la conformité</li>
+                </ul>
+            </div>
+
+            <div class="prevention-box">
+                <h4>🔍 Préparation à l'audit</h4>
+                <p>Préparez-vous aux éventuelles questions des autorités :</p>
+                <ul>
+                    <li>Quelles données personnelles traitez-vous avec l'IA ?</li>
+                    <li>Quelle est la base légale de ces traitements ?</li>
+                    <li>Comment sécurisez-vous les données ?</li>
+                    <li>Comment informez-vous les personnes concernées ?</li>
+                    <li>Quelles mesures en cas de violation de données ?</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Besoin d'un outil IA conforme pour votre entreprise ?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">Nos prompts sont conçus pour respecter les exigences de conformité suisses</p>
+            <a href="/produit-pack-prompts.html" class="cta-button">Découvrir nos solutions IA conformes</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: #fff; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+                <a href="/" style="color: #9ca3af; text-decoration: none;">Accueil</a>
+                <a href="/guides/" style="color: #9ca3af; text-decoration: none;">Guides</a>
+                <a href="terms" style="color: #9ca3af; text-decoration: none;">Conditions</a>
+                <a href="contact" style="color: #9ca3af; text-decoration: none;">Contact</a>
+            </div>
+            <p style="color: #9ca3af;">&copy; 2024 Expert IA Suisse. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

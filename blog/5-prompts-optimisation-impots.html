@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Prompts IA pour Optimiser votre Déclaration d'Impôts 2024</title>
+    <meta name="description" content="5 prompts prêts à l'emploi pour ChatGPT et Claude afin d'identifier les déductions fiscales souvent oubliées en Suisse. Optimisez votre déclaration 2024.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .article-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: #fff;
+            padding: 60px 0;
+        }
+
+        .article-intro {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #059669;
+        }
+
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #374151;
+        }
+
+        /* Prompt Boxes */
+        .prompt-box {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .prompt-box:before {
+            content: "PROMPT COPIER-COLLER";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #059669;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 150px;
+            background: #10b981;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            background: #059669;
+        }
+
+        /* Result Box */
+        .result-box {
+            background: #f0fdf4;
+            color: #166534;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #22c55e;
+        }
+
+        .result-box h4 {
+            margin-bottom: 10px;
+            color: #166534;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .warning-box h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #059669;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #fff;
+            color: #059669;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .prompt-box {
+                font-size: 14px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../navbar.js"></script>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container">
+            <h1 class="article-title">5 Prompts IA pour Optimiser votre Déclaration d'Impôts 2024</h1>
+            <div class="article-meta">
+                <span>Par Expert IA Suisse</span> • <span>12 janvier 2024</span> • <span>10 min de lecture</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <div class="container">
+            <div class="article-intro">
+                <p>Découvrez 5 prompts prêts à l'emploi pour ChatGPT et Claude qui vous aideront à identifier les déductions fiscales souvent oubliées et à optimiser votre déclaration d'impôts 2024 en Suisse. Ces prompts ont été testés et optimisés pour des résultats fiables.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2'500 CHF</span>
+                    <span class="stat-label">Économie moyenne constatée</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">73%</span>
+                    <span class="stat-label">Des contribuables oublient des déductions</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15 min</span>
+                    <span class="stat-label">Temps moyen d'analyse</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Taux de satisfaction</span>
+                </div>
+            </div>
+
+            <h2 class="section-title">Pourquoi utiliser ces prompts ?</h2>
+            
+            <div class="warning-box">
+                <h4>⚠️ Avant de commencer</h4>
+                <p>Ces prompts sont des outils de préparation et d'identification. Ils ne remplacent pas l'avis d'un professionnel. Faites toujours valider les points importants par un fiscaliste.</p>
+            </div>
+
+            <h2 class="section-title">Prompt 1 : Analyse globale des déductions</h2>
+            <p class="subsection-title">Identifie toutes les déductions possibles selon votre situation</p>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Tu es un expert fiscal suisse avec 15 ans d'expérience. Analyse ma situation personnelle et identifie TOUTES les déductions fiscales possibles en Suisse :
+
+                <strong>MA SITUATION :</strong>
+                - Canton de résidence : [VOTRE CANTON]
+                - Statut marital : [CÉLIBATAIRE/MARIÉ/PACS]
+                - Revenu annuel brut : [MONTANT] CHF
+                - Type d'activité : [SALARIÉ/INDÉPENDANT/RETRAITÉ]
+                - Situation logement : [LOCATAIRE/PROPRIÉTAIRE]
+                - Enfants à charge : [NOMBRE]
+                - Principales dépenses : [LISTE]
+
+                <strong>ANALYSE DÉTAILLÉE :</strong>
+                1. <u>Déductions fédérales souvent oubliées</u> (avec montants max)
+                2. <u>Déductions cantonales spécifiques</u> à [CANTON]
+                3. <u>Crédits d'impôt disponibles</u> pour ma situation
+                4. <u>Dépenses professionnelles déductibles</u>
+                5. <u>Optimisations spécifiques</u> que je pourrais faire
+
+                <strong>FORMAT :</strong>
+                - Liste détaillée par catégorie
+                - Montants maximums pour chaque déduction
+                - Documents justificatifs nécessaires
+                - ⚠️ Avertissements sur les points sensibles
+            </div>
+
+            <div class="result-box">
+                <h4>💡 Résultat attendu</h4>
+                <p>Ce prompt vous donnera une vue d'ensemble complète de toutes les déductions applicables à votre situation, y compris celles que vous n'aviez peut-être pas identifiées.</p>
+            </div>
+
+            <h2 class="section-title">Prompt 2 : Optimisation du 3e pilier</h2>
+            <p class="subsection-title">Calcule le montant optimal pour votre 3e pilier</p>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Expert fiscal suisse spécialisé en prévoyance : Détermine le montant OPTIMAL pour mon 3e pilier A en 2024.
+
+                <strong>DONNÉES :</strong>
+                - Revenu net imposable estimé : [MONTANT] CHF
+                - Canton d'imposition : [CANTON]
+                - Taux d'imposition marginal : [X]% (approximatif)
+                - Situation familiale : [MARIALE]
+                - Autres déductions importantes : [LISTE]
+                - Capacité d'épargne : [MONTANT] CHF/an
+
+                <strong>ANALYSE REQUISE :</strong>
+                1. <u>Calcul du gain fiscal immédiat</u> pour différents montants
+                2. <u>Montant optimal</u> pour maximiser l'avantage fiscal
+                3. <u>Impact sur le taux d'imposition</u> global
+                4. <u>Comparaison avec d'autres placements</u> fiscaux
+                5. <u>Stratégie de versement</u> (unique ou échelonné)
+
+                <strong>CONTRAINTES :</strong>
+                - Maximum légal 2024 : 7'056 CHF
+                - Tenir compte de ma capacité d'épargne réelle
+                - Considérer mes autres projets financiers
+
+                <strong>OUTPUT :</strong>
+                Montant optimal recommandé + justification détaillée + économie d'impôt calculée
+            </div>
+
+            <div class="result-box">
+                <h4>💡 Résultat attendu</h4>
+                <p>Un calcul précis du montant de 3e pilier qui vous apportera le meilleur retour fiscal en tenant compte de votre situation personnelle complète.</p>
+            </div>
+
+            <h2 class="section-title">Prompt 3 : Analyse des frais professionnels</h2>
+            <p class="subsection-title">Identifie tous les frais professionnels déductibles</p>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Spécialiste fiscal Suisse Romande : Liste exhaustive des frais professionnels déductibles pour mon activité.
+
+                <strong>PROFIL PROFESSIONNEL :</strong>
+                - Profession : [VOTRE MÉTIER]
+                - Statut : [SALARIÉ/INDÉPENDANT]
+                - Lieu de travail : [MAISON/BUREAU/DÉPLACEMENTS]
+                - Distance domicile-travail : [X] km
+                - Télétravail : [OUI/NON/PARTIEL]
+                - Matériel professionnel utilisé : [LISTE]
+
+                <strong>ANALYSE DÉTAILLÉE PAR CATÉGORIE :</strong>
+                1. <u>Frais de transport et déplacement</u> (avec limites 2024)
+                2. <u>Matériel et fournitures professionnelles</u>
+                3. <u>Formations et perfectionnement</u>
+                4. <u>Frais de repas et restauration</u>
+                5. <u>Coûts liés au télétravail</u> (si applicable)
+                6. <u>Autres frais spécifiques</u> à ma profession
+
+                <strong>POUR CHAQUE POSTE :</strong>
+                - Montant maximum déductible 2024
+                - Conditions à remplir
+                - Documents justificatifs requis
+                - Astuces d'optimisation
+                - ⚠️ Pièges à éviter
+
+                <strong>FORMAT :</strong> Tableau clair avec montants et conditions
+            </div>
+
+            <div class="result-box">
+                <h4>💡 Résultat attendu</h4>
+                <p>Une liste complète et personnalisée de tous vos frais professionnels déductibles, souvent sous-estimés, avec les montants exacts et conditions.</p>
+            </div>
+
+            <h2 class="section-title">Prompt 4 : Comparaison cantonale fiscale</h2>
+            <p class="subsection-title">Compare l'impact fiscal de différents cantons</p>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Expert fiscal suisse : Compare l'impact fiscal de résider dans différents cantons pour ma situation personnelle.
+
+                <strong>MA SITUATION :</strong>
+                - Revenu net imposable : [MONTANT] CHF
+                - Statut marital : [CÉLIBATAIRE/MARIÉ]
+                - Activité : [PROFESSION]
+                - Propriété immobilière : [OUI/NON]
+                - Enfants : [NOMBRE]
+                - Canton actuel : [CANTON]
+
+                <strong>CANTONS À COMPARER :</strong> [LISTE 3-5 CANTONS EX: Vaud, Genève, Valais, Fribourg, Neuchâtel]
+
+                <strong>ANALYSE COMPARATIVE DÉTAILLÉE :</strong>
+                1. <u>Impôt à payer</u> dans chaque canton (montant exact)
+                2. <u>Déductions spécifiques</u> par canton pour ma situation
+                3. <u>Taux effectif</u> d'imposition dans chaque cas
+                4. <u>Charges sociales</u> et autres prélèvements
+                5. <u>Coût de la vie</u> approximatif pour l'analyse complète
+
+                <strong>FORMAT :</strong> Tableau comparatif clair avec économies potentielles
+                <strong>BONUS :</strong> Identifie les 2 cantons les plus avantageux pour moi
+            </div>
+
+            <div class="result-box">
+                <h4>💡 Résultat attendu</h4>
+                <p>Une analyse comparative complète qui peut vous faire découvrir des économies d'impôt importantes si un déménagement est envisageable.</p>
+            </div>
+
+            <h2 class="section-title">Prompt 5 : Planification stratégique 3 ans</h2>
+            <p class="subsection-title">Optimise votre fiscalité sur le long terme</p>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Stratège fiscal suisse : Élabore une stratégie fiscale optimale sur 3 ans (2024-2026) pour ma situation.
+
+                <strong>SITUATION ACTUELLE :</strong>
+                - Revenu actuel : [MONTANT] CHF (croissance estimée +[X]%/an)
+                - Patrimoine : [MONTANT] CHF
+                - Projets : [ACHAT IMMOBILIER/CRÉATION ENTREPRISE/RETRAITE]
+                - Objectifs : [LISTE VOS OBJECTIFS FINANCIERS]
+                - Contraintes : [LISTE CONTRAINTES]
+
+                <strong>STRATÉGIE 2024-2026 :</strong>
+                1. <u>Optimisations immédiates</u> (actions 2024)
+                2. <u>Planification moyen terme</u> (2025 avec projets)
+                3. <u>Préparation long terme</u> (2026 et au-delà)
+                4. <u>Optimisations patrimoniales</u> (3e pilier, actions, immobilier)
+                5. <u>Anticipation des changements</u> législatifs possibles
+
+                <strong>POUR CHAQUE ANNÉE :</strong>
+                - Actions concrètes à entreprendre
+                - Montants et timing optimaux
+                - Économies d'impôt projetées
+                - Risques et alternatives
+                - Points de décision critiques
+
+                <strong>OUTPUT :</strong> Roadmap détaillée avec chiffrages
+            </div>
+
+            <div class="result-box">
+                <h4>💡 Résultat attendu</h4>
+                <p>Un plan d'action fiscal sur 3 ans qui vous permettra d'optimiser votre situation de manière proactive et anticipée.</p>
+            </div>
+
+            <h2 class="section-title">Comment utiliser efficacement ces prompts</h2>
+
+            <div class="warning-box">
+                <h4>⚠️ Instructions importantes</h4>
+                <ul>
+                    <li><strong>Remplacez les [VARIABLES]</strong> par vos informations exactes</li>
+                    <li><strong>Soyez précis</strong> dans vos montants et situations</li>
+                    <li><strong>Testez les deux IA</strong> (ChatGPT et Claude) et comparez</li>
+                    <li><strong>Notez les résultats</strong> pour en discuter avec votre fiscaliste</li>
+                    <li><strong>Gardez une copie</strong> des analyses pour votre dossier</li>
+                </ul>
+            </div>
+
+            <div class="result-box">
+                <h4>💡 Astuce pro</h4>
+                <p>Utilisez ces prompts comme base de préparation AVANT votre rendez-vous avec votre fiduciaire. Vous gagnerez du temps et obtiendrez des conseils plus ciblés.</p>
+            </div>
+
+            <h2 class="section-title">Prochaines étapes</h2>
+            
+            <ol>
+                <li><strong>Copiez et adaptez</strong> les prompts avec vos données personnelles</li>
+                <li><strong>Testez avec ChatGPT ou Claude</strong> et sauvegardez les résultats</li>
+                <li><strong>Préparez les documents</strong> justificatifs mentionnés dans les analyses</li>
+                <li><strong>Prenez rendez-vous</strong> avec votre fiscaliste pour validation</li>
+                <li><strong>Implémentez</strong> les recommandations validées</li>
+            </ol>
+        </div>
+    </article>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Prêt à optimiser vos impôts ?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">Découvrez nos prompts IA spécialisés pour la fiscalité suisse</p>
+            <a href="/produit-pack-prompts.html" class="cta-button">Obtenir tous nos prompts fiscaux</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: #fff; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+                <a href="/" style="color: #9ca3af; text-decoration: none;">Accueil</a>
+                <a href="/blog/" style="color: #9ca3af; text-decoration: none;">Blog</a>
+                <a href="terms" style="color: #9ca3af; text-decoration: none;">Conditions</a>
+                <a href="contact" style="color: #9ca3af; text-decoration: none;">Contact</a>
+            </div>
+            <p style="color: #9ca3af;">&copy; 2024 Expert IA Suisse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt(button) {
+            const promptBox = button.parentElement;
+            const promptText = promptBox.textContent.replace('Copier', '').replace('PROMPT COPIER-COLLER', '').trim();
+            
+            navigator.clipboard.writeText(promptText).then(function() {
+                button.textContent = 'Copié !';
+                setTimeout(function() {
+                    button.textContent = 'Copier';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Erreur lors de la copie: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

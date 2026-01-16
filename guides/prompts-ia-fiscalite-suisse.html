@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompts IA pour la Fiscalité Suisse - Guide Complet 2024</title>
+    <meta name="description" content="Comment utiliser l'IA pour la fiscalité en Suisse. Meilleurs prompts, exemples pratiques et limites à connaître pour optimiser vos déclarations.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero-guide {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-guide h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-guide .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #fff;
+            padding: 60px 0;
+            margin: 20px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1e40af;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #e0f2fe;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            color: #0369a1;
+            margin-bottom: 20px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 4px solid #1e40af;
+        }
+
+        .content-card h3 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .content-card p {
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        /* Prompt Boxes */
+        .prompt-box {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .prompt-box:before {
+            content: "PROMPT IA";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #3b82f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 80px;
+            background: #10b981;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            background: #059669;
+        }
+
+        /* Warning Boxes */
+        .warning-box {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .warning-box h4 {
+            margin-bottom: 10px;
+            color: #92400e;
+        }
+
+        .info-box {
+            background: #f0f9ff;
+            color: #0369a1;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .info-box h4 {
+            margin-bottom: 10px;
+            color: #0369a1;
+        }
+
+        /* Lists */
+        .content-list {
+            margin: 20px 0;
+        }
+
+        .content-list li {
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+
+        .content-list strong {
+            color: #1e40af;
+        }
+
+        /* Example Results */
+        .example-result {
+            background: #f0fdf4;
+            color: #166534;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #22c55e;
+        }
+
+        .example-result h4 {
+            margin-bottom: 10px;
+            color: #166534;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 4px solid #dc2626;
+        }
+
+        .disclaimer h4 {
+            margin-bottom: 15px;
+            color: #991b1b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-guide h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .content-card {
+                padding: 20px;
+            }
+
+            .prompt-box {
+                padding: 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../navbar.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero-guide">
+        <div class="container">
+            <h1>Prompts IA pour la Fiscalité Suisse</h1>
+            <p class="subtitle">Guide complet pour utiliser l'intelligence artificielle dans votre gestion fiscale suisse</p>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="content-section">
+        <div class="container">
+            <div class="toc">
+                <h3>Sommaire</h3>
+                <ul>
+                    <li><a href="#introduction">1. Introduction aux prompts IA fiscaux</a></li>
+                    <li><a href="#avantages">2. Avantages et limites</a></li>
+                    <li><a href="#prompts-fiscaux">3. Meilleurs prompts pour la fiscalité</a></li>
+                    <li><a href="#optimisation">4. Optimisation fiscale avec IA</a></li>
+                    <li><a href="#erreurs">5. Erreurs à éviter</a></li>
+                    <li><a href="#validation">6. Validation professionnelle</a></li>
+                    <li><a href="#exemples">7. Exemples pratiques</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="content-section" id="introduction">
+        <div class="container">
+            <h2 class="section-title">Introduction aux prompts IA fiscaux</h2>
+            <p class="section-subtitle">Comment l'IA peut transformer votre approche de la fiscalité suisse</p>
+
+            <div class="content-card">
+                <h3>Qu'est-ce qu'un prompt fiscal IA ?</h3>
+                <p>Un prompt fiscal est une instruction détaillée donnée à une intelligence artificielle pour qu'elle agisse comme un expert fiscal suisse. Il s'agit de transformer l'IA en un assistant spécialisé dans les questions fiscales helvétiques.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Pourquoi utiliser l'IA pour la fiscalité ?</h4>
+                <p>L'IA peut analyser rapidement des situations complexes, identifier des opportunités de déductions, et vous fournir une structure claire pour vos démarches fiscales. C'est un outil de préparation et d'optimisation, pas un remplacement du conseil fiscal professionnel.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Les meilleures IA pour la fiscalité suisse</h3>
+                <ul class="content-list">
+                    <li><strong>ChatGPT (GPT-4) :</strong> Excellente pour l'analyse structurée et les explications détaillées</li>
+                    <li><strong>Claude :</strong> Très bon pour les analyses contextuelles et les comparaisons</li>
+                    <li><strong>Gemini :</strong> Utile pour les recherches croisées et les mises à jour</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avantages et limites -->
+    <section class="content-section" id="avantages">
+        <div class="container">
+            <h2 class="section-title">Avantages et limites de l'IA fiscale</h2>
+            <p class="section-subtitle">Ce que l'IA peut et ne peut pas faire pour vous</p>
+
+            <div class="content-card">
+                <h3>✅ Avantages concrets</h3>
+                <ul class="content-list">
+                    <li><strong>Rapidité :</strong> Analyse instantanée de votre situation</li>
+                    <li><strong>Disponibilité 24/7 :</strong> Pas besoin de rendez-vous</li>
+                    <li><strong>Coût réduit :</strong> Fraction du prix d'un conseiller fiscal</li>
+                    <li><strong>Structure claire :</strong> Réponses organisées et actionnables</li>
+                    <li><strong>Mises à jour :</strong> Intègre les dernières réglementations</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h4>⚠️ Limites importantes à connaître</h4>
+                <ul class="content-list">
+                    <li><strong>Pas de conseil juridique :</strong> L'IA ne peut pas remplacer un avis fiscal officiel</li>
+                    <li><strong>Contexte limité :</strong> Peut ne pas avoir toutes les spécificités de votre cas</li>
+                    <li><strong>Responsabilité :</strong> Vous restez responsable de vos déclarations</li>
+                    <li><strong>Situations complexes :</strong> Les cas particuliers nécessitent un expert</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>🎯 Notre recommandation</h4>
+                <p>Utilisez l'IA comme outil de préparation et d'optimisation, puis faites valider les points importants par un professionnel. C'est la combinaison idéale pour être efficace tout en restant en sécurité.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meilleurs prompts -->
+    <section class="content-section" id="prompts-fiscaux">
+        <div class="container">
+            <h2 class="section-title">Meilleurs prompts pour la fiscalité suisse</h2>
+            <p class="section-subtitle">Des prompts testés et optimisés pour des résultats fiables</p>
+
+            <div class="content-card">
+                <h3>Prompt pour l'analyse fiscale globale</h3>
+                <p>Ce prompt vous donne une vue d'ensemble structurée de votre situation fiscale :</p>
+            </div>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Tu es un expert fiscal suisse avec 20 ans d'expérience. Analyse ma situation fiscale suivante de manière structurée :
+
+                <strong>SITUATION :</strong>
+                - Canton de résidence : [VOTRE CANTON]
+                - Statut marital : [MARIE/CELIBATAIRE]
+                - Revenu annuel brut : [MONTANT] CHF
+                - Type d'activité : [INDEPENDANT/SALARIE]
+                - Charges principales : [LISTE]
+
+                <strong>OBJECTIF :</strong>
+                1. Identifier toutes les déductions possibles
+                2. Calculer l'impôt estimé
+                3. Proposer des optimisations légales
+                4. Donner une checklist des documents nécessaires
+
+                <strong>FORMAT DE REPONSE :</strong>
+                - Réponse structurée par sections
+                - Chiffrages précis quand possible
+                - Avertissements sur les points sensibles
+                - Recommandations pour la validation pro
+            </div>
+
+            <div class="content-card">
+                <h3>Prompt pour l'optimisation des déductions</h3>
+                <p>Identifie toutes les déductions que vous pourriez avoir manquées :</p>
+            </div>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Expert fiscal suisse spécialisé dans les déductions : 
+
+                <strong>MISSION :</strong> Trouver TOUTES les déductions possibles pour un(e) [STATUT] résidant(e) en Suisse, canton de [CANTON], avec les caractéristiques suivantes :
+
+                <strong>PROFIL :</strong>
+                - Revenu : [MONTANT] CHF/an
+                - Activité : [DESCRIPTION]
+                - Situation familiale : [DETAILS]
+                - Logement : [PROPRIETAIRE/LOCATAIRE]
+                - Transports : [DETAILS]
+
+                <strong>ANALYSE REQUISE :</strong>
+                1. Déductions fédérales souvent oubliées
+                2. Déductions cantonales spécifiques
+                3. Déductions professionnelles
+                4. Crédits d'impôt disponibles
+                5. Niches fiscales légales
+
+                <strong>CONTRAINTES :</strong> Uniquement des déductions 100% légales et vérifiables. Mentionner les justificatifs nécessaires.
+            </div>
+
+            <div class="content-card">
+                <h3>Prompt pour la comparaison cantonale</h3>
+                <p>Compare l'impact fiscal de différents cantons pour votre situation :</p>
+            </div>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Spécialiste fiscal suisse : Compare l'impact fiscal de déménager dans différents cantons pour cette situation :
+
+                <strong>SITUATION DE BASE :</strong>
+                - Revenu annuel : [MONTANT] CHF
+                - Statut : [MARITAL/PROFESSIONNEL]
+                - Actuellement résident : [CANTON ACTUEL]
+
+                <strong>CANTONS À COMPARER :</strong> [LISTE 3-5 CANTONS]
+
+                <strong>ANALYSE DÉTAILLÉE :</strong>
+                1. Taux d'imposition effectif par canton
+                2. Déductions spécifiques par canton
+                3. Charges sociales différenciées
+                4. Coût de la vie approximatif
+                5. Avantages/inconvénients fiscaux
+
+                <strong>FORMAT :</strong> Tableau comparatif clair avec chiffrages.
+            </div>
+        </div>
+    </section>
+
+    <!-- Optimisation fiscale -->
+    <section class="content-section" id="optimisation">
+        <div class="container">
+            <h2 class="section-title">Optimisation fiscale avec l'IA</h2>
+            <p class="section-subtitle">Stratégies avancées pour optimiser votre situation</p>
+
+            <div class="content-card">
+                <h3>Scénarios d'optimisation à tester</h3>
+                <p>Voici des situations où l'IA peut vous aider à identifier des opportunités :</p>
+                <ul class="content-list">
+                    <li><strong>Optimisation du 3e pilier :</strong> Quel montant est idéal pour votre tranche d'imposition ?</li>
+                    <li><strong>Timing des déductions :</strong> Quand déduire certains frais pour maximiser l'impact ?</li>
+                    <li><strong>Répartition familiale :</strong> Comment optimiser les déductions entre conjoints ?</li>
+                    <li><strong>Investissements :</strong> Quels investissements offrent des avantages fiscaux ?</li>
+                </ul>
+            </div>
+
+            <div class="prompt-box">
+                <button class="copy-button" onclick="copyPrompt(this)">Copier</button>
+                Stratège fiscal suisse : Propose 5 scénarios d'optimisation fiscale pour :
+
+                <strong>SITUATION :</strong>
+                - Revenu : [MONTANT] CHF
+                - Canton : [CANTON]
+                - Statut : [FAMILIAL/PRO]
+                - Objectif : Réduction d'impôt légale
+
+                <strong>SCÉNARIOS À EXPLORER :</strong>
+                1. Optimisation 3e pilier et prévoyance
+                2. Timing des gros investissements
+                3. Répartition des revenus familiaux
+                4. Utilisation des crédits d'impôt
+                5. Planification sur 3 ans
+
+                <strong>POUR CHAQUE SCÉNARIO :</strong>
+                - Économie d'impôt estimée
+                - Mise en œuvre pratique
+                - Risques et limites
+                - Documents nécessaires
+            </div>
+
+            <div class="example-result">
+                <h4>💡 Exemple de résultat</h4>
+                <p>Un utilisateur a identifié via l'IA qu'en anticipant l'achat de matériel professionnel de 5'000 CHF en décembre plutôt qu'en janvier, il pouvait déduire cette somme de l'année fiscale en cours, générant une économie d'impôt de 1'200 CHF.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Erreurs à éviter -->
+    <section class="content-section" id="erreurs">
+        <div class="container">
+            <h2 class="section-title">Erreurs fréquentes avec l'IA fiscale</h2>
+            <p class="section-subtitle">Évitez ces pièges pour des résultats fiables</p>
+
+            <div class="warning-box">
+                <h4>❌ Erreurs de prompt à éviter</h4>
+                <ul class="content-list">
+                    <li><strong>Trop vague :</strong> "Comment payer moins d'impôts ?" → Résultats imprécis</li>
+                    <li><strong>Pas de contexte suisse :</strong> L'IA peut appliquer des règles étrangères</li>
+                    <li><strong>Manque de détails :</strong> Sans infos précises, l'IA généralise</li>
+                    <li><strong>Questions biaisées :</strong> "Trouve-moi une niche fiscale" → Réponses risquées</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>✅ Bonnes pratiques de prompt</h3>
+                <ul class="content-list">
+                    <li><strong>Soit spécifique :</strong> Donnez des chiffres, dates, contexte exact</li>
+                    <li><strong>Mentionnez la Suisse :</strong> Précisez toujours le contexte helvétique</li>
+                    <li><strong>Demandez des sources :</strong> "Avec références légales"</li>
+                    <li><strong>Structurez votre demande :</strong> Utilisez des sections claires</li>
+                    <li><strong>Précisez les limites :</strong> "Uniquement légal et vérifié"</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>🛡️ Sécurité et légalité</h4>
+                <p>Toujours vérifier que les suggestions de l'IA sont : 1) Légalement autorisées en Suisse, 2) Applicables à votre situation exacte, 3) Confirmées par une source officielle ou un professionnel pour les décisions importantes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Validation professionnelle -->
+    <section class="content-section" id="validation">
+        <div class="container">
+            <h2 class="section-title">Quand faire valider par un professionnel</h2>
+            <p class="section-subtitle">Les cas où l'avis d'un expert est indispensable</p>
+
+            <div class="warning-box">
+                <h4>⚠️ Validation obligatoire</h4>
+                <p>Faites systématiquement valider par un professionnel si :</p>
+                <ul class="content-list">
+                    <li>Votre situation fiscale est complexe (plusieurs revenus, sociétés, etc.)</li>
+                    <li>Les montants en jeu sont importants (> 10'000 CHF d'économie d'impôt)</li>
+                    <li>Vous envisagez une optimisation agressive ou innovante</li>
+                    <li>Vous avez des activités internationales ou transfrontalières</li>
+                    <li>Vous êtes en litige avec l'administration fiscale</li>
+                </ul>
+            </div>
+
+            <div class="content-card">
+                <h3>Comment présenter votre analyse IA à un professionnel</h3>
+                <p>Pour maximiser l'efficacité de la consultation :</p>
+                <ul class="content-list">
+                    <li><strong>Imprimez l'analyse complète de l'IA</strong> avec vos questions</li>
+                    <li><strong>Préparez vos documents source</strong> (factures, contrats, etc.)</li>
+                    <li><strong>Identifiez les points clés</strong> que vous voulez valider</li>
+                    <li><strong>Demandez des explications</strong> sur les divergences éventuelles</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💰 ROI de la validation</h4>
+                <p>Une consultation fiscal (200-500 CHF) peut vous faire économiser des milliers de francs ou éviter des pénalités. C'est un investissement rentable pour les situations complexes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exemples pratiques -->
+    <section class="content-section" id="exemples">
+        <div class="container">
+            <h2 class="section-title">Exemples pratiques concrets</h2>
+            <p class="section-subtitle">Des cas réels où l'IA a fait la différence</p>
+
+            <div class="content-card">
+                <h3>Cas 1 : Indépendant avec bureau à domicile</h3>
+                <p><strong>Situation :</strong> Graphiste indépendant, 65'000 CHF de revenu, travaille depuis chez lui</p>
+                <p><strong>Prompt utilisé :</strong> Analyse des déductions pour bureau à domicile en Suisse</p>
+                <div class="example-result">
+                    <strong>Résultat IA :</strong> Identification de 8'500 CHF de déductions non utilisées (partiel loyer, électricité, internet, mobilier)
+                    <br><strong>Impact :</strong> Économie d'impôt de 2'100 CHF
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>Cas 2 : Couple avec enfants et crédits d'impôt</h3>
+                <p><strong>Situation :</strong> Famille avec 2 enfants, revenus combinés 120'000 CHF</p>
+                <p><strong>Prompt utilisé :</strong> Optimisation des crédits d'impôt familiaux en Suisse</p>
+                <div class="example-result">
+                    <strong>Résultat IA :</strong> Découverte de crédits d'impôt pour frais de garde et activités extrascolaires
+                    <br><strong>Impact :strong> Économie de 1'800 CHF supplémentaires
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h3>Cas 3 : Changement de canton pour optimisation</h3>
+                <p><strong>Situation :</strong> Ingénieur indépendant envisage de déménager pour des raisons fiscales</p>
+                <p><strong>Prompt utilisé :</strong> Comparaison fiscale entre Vaud, Valais et Fribourg</p>
+                <div class="example-result">
+                    <strong>Résultat IA :</strong> Identification d'une économie potentielle de 4'200 CHF/an en déménageant dans le canton voisin
+                    <br><strong>Suite :</strong> Déménagement validé par fiscaliste, économie réelle : 3'800 CHF/an
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Prêt à utiliser l'IA pour votre fiscalité ?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">Découvrez nos prompts IA spécialisés pour la fiscalité suisse</p>
+            <a href="/produit-pack-prompts.html" class="cta-button">Obtenir les prompts fiscaux IA</a>
+        </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="content-section">
+        <div class="container">
+            <div class="disclaimer">
+                <h4>⚠️ Disclaimer important</h4>
+                <p>Ce guide sur l'utilisation de l'IA pour la fiscalité est fourni à titre informatif uniquement. Les prompts et suggestions présentés ne constituent pas des conseils fiscaux officiels et ne remplacent pas l'avis d'un professionnel qualifié.</p>
+                <p>Toujours faire valider les décisions fiscales importantes par un fiscaliste, comptable ou avocat fiscaliste agréé en Suisse. La responsabilité finale de vos déclarations fiscales vous incombe.</p>
+                <p>Les informations sont basées sur la législation fiscale suisse en vigueur en 2024 et peuvent être sujettes à modifications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: #fff; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+                <a href="/" style="color: #9ca3af; text-decoration: none;">Accueil</a>
+                <a href="/guides/" style="color: #9ca3af; text-decoration: none;">Guides</a>
+                <a href="terms" style="color: #9ca3af; text-decoration: none;">Conditions</a>
+                <a href="contact" style="color: #9ca3af; text-decoration: none;">Contact</a>
+            </div>
+            <p style="color: #9ca3af;">&copy; 2024 Expert IA Suisse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy prompt function
+        function copyPrompt(button) {
+            const promptBox = button.parentElement;
+            const promptText = promptBox.textContent.replace('Copier', '').replace('PROMPT IA', '').trim();
+            
+            navigator.clipboard.writeText(promptText).then(function() {
+                button.textContent = 'Copié !';
+                setTimeout(function() {
+                    button.textContent = 'Copier';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Erreur lors de la copie: ', err);
+            });
+        }
+
+        // FAQ Toggle (if needed)
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            faqItem.classList.toggle('active');
+            icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+    </script>
+</body>
+</html>

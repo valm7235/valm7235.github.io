@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Expert IA Suisse | Actualités Fiscalité et IA</title>
+    <meta name="description" content="Blog spécialisé sur l'utilisation de l'IA pour la fiscalité et la finance en Suisse. Articles pratiques, conseils et actualités.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero-blog {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-blog h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-blog .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #1e40af;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #fff;
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .blog-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .blog-excerpt {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #9ca3af;
+        }
+
+        .read-more {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #dc2626;
+        }
+
+        /* Categories */
+        .categories {
+            background: #f8f9fa;
+            padding: 40px 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .category-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #1e40af;
+        }
+
+        .category-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .category-count {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .newsletter-button {
+            background: #dc2626;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-blog h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../navbar.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero-blog">
+        <div class="container">
+            <h1>Blog Expert IA Suisse</h1>
+            <p class="subtitle">Actualités, conseils et analyses sur l'utilisation de l'IA pour la fiscalité et la finance en Suisse</p>
+        </div>
+    </section>
+
+    <!-- Recent Articles -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Articles Récents</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <span class="blog-category">IA & Fiscalité</span>
+                        <h3 class="blog-title">ChatGPT vs Claude : Quelle IA choisir pour la fiscalité suisse ?</h3>
+                        <p class="blog-excerpt">Comparaison détaillée des deux principales IA disponibles pour l'analyse fiscale en Suisse. Avantages, limites et cas d'usage spécifiques.</p>
+                        <div class="blog-meta">
+                            <span>15 janvier 2024</span>
+                            <a href="chatgpt-vs-claude-fiscalite.html" class="read-more">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">📊</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Optimisation</span>
+                        <h3 class="blog-title">5 prompts IA pour optimiser votre déclaration d'impôts 2024</h3>
+                        <p class="blog-excerpt">Des exemples concrets de prompts à utiliser avec ChatGPT ou Claude pour identifier les déductions souvent oubliées en Suisse.</p>
+                        <div class="blog-meta">
+                            <span>12 janvier 2024</span>
+                            <a href="5-prompts-optimisation-impots.html" class="read-more">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">🏦</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Actualité</span>
+                        <h3 class="blog-title">Nouveautés fiscales 2024 : Ce qui change pour les indépendants</h3>
+                        <p class="blog-excerpt">Tous les changements fiscaux importants de 2024 qui impactent les indépendants suisses. Déductions, taux et nouvelles obligations.</p>
+                        <div class="blog-meta">
+                            <span>8 janvier 2024</span>
+                            <a href="nouveautes-fiscales-2024-independants.html" class="read-more">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">⚖️</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Conformité</span>
+                        <h3 class="blog-title">RGPD et IA : Comment rester conforme en Suisse</h3>
+                        <p class="blog-excerpt">Guide pratique pour utiliser l'IA en entreprise tout en respectant la Loi sur la protection des données et le RGPD.</p>
+                        <div class="blog-meta">
+                            <span>5 janvier 2024</span>
+                            <a href="rgpd-ia-conformite-suisse.html" class="read-more">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">💡</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Astuces</span>
+                        <h3 class="blog-title">Erreurs classiques à éviter avec l'IA en fiscalité</h3>
+                        <p class="blog-excerpt">Les pièges les plus courants lors de l'utilisation de l'IA pour la fiscalité et comment les éviter pour des résultats fiables.</p>
+                        <div class="blog-meta">
+                            <span>2 janvier 2024</span>
+                            <a href="erreurs-classiques-ia-fiscalite.html" class="read-more">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image">📈</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Investissement</span>
+                        <h3 class="blog-title">Analyse d'investissement avec l'IA : Guide pratique</h3>
+                        <p class="blog-excerpt">Comment utiliser l'IA pour analyser des opportunités d'investissement en Suisse, évaluer les risques et comparer les options.</p>
+                        <div class="blog-meta">
+                            <span>28 décembre 2023</span>
+                            <a href="analyse-investissement-ia-suisse.html" class="read-more">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Catégories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon">🤖</div>
+                    <h3 class="category-title">IA & Fiscalité</h3>
+                    <p class="category-count">12 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📊</div>
+                    <h3 class="category-title">Optimisation</h3>
+                    <p class="category-count">8 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏦</div>
+                    <h3 class="category-title">Actualité</h3>
+                    <p class="category-count">15 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">⚖️</div>
+                    <h3 class="category-title">Conformité</h3>
+                    <p class="category-count">6 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💡</div>
+                    <h3 class="category-title">Astuces</h3>
+                    <p class="category-count">10 articles</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📈</div>
+                    <h3 class="category-title">Investissement</h3>
+                    <p class="category-count">7 articles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Restez informé des dernières actualités</h2>
+            <p>Recevez nos articles et guides directement dans votre boîte email</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" class="newsletter-input" placeholder="Votre adresse email" required>
+                <button type="submit" class="newsletter-button">S'abonner</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: #fff; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+                <a href="/" style="color: #9ca3af; text-decoration: none;">Accueil</a>
+                <a href="/guides/" style="color: #9ca3af; text-decoration: none;">Guides</a>
+                <a href="terms" style="color: #9ca3af; text-decoration: none;">Conditions</a>
+                <a href="contact" style="color: #9ca3af; text-decoration: none;">Contact</a>
+            </div>
+            <p style="color: #9ca3af;">&copy; 2024 Expert IA Suisse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // Simulation d'inscription
+            alert(`Merci pour votre inscription ! Nous vous enverrons nos prochains articles à ${email}`);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreurs Fiscales Fréquentes en Suisse - Guide de Prévention 2024</title>
+    <meta name="description" content="Les 15 erreurs fiscales les plus courantes en Suisse et comment les éviter. Guide pratique pour indépendants et salariés.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero-guide {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-guide h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-guide .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: #fff;
+            padding: 60px 0;
+            margin: 20px 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #dc2626;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        /* Error Cards */
+        .error-card {
+            background: #fef2f2;
+            border: 2px solid #fecaca;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .error-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #dc2626;
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .error-card h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 20px;
+            padding-left: 20px;
+        }
+
+        .error-consequence {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .error-solution {
+            background: #f0fdf4;
+            color: #166534;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        /* Prevention Box */
+        .prevention-box {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid #0ea5e9;
+        }
+
+        .prevention-box h4 {
+            margin-bottom: 15px;
+            color: #0369a1;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #dc2626;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #dc2626;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .checklist h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e7eb;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #fff;
+            color: #dc2626;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-guide h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .error-card {
+                padding: 25px 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <script src="../navbar.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero-guide">
+        <div class="container">
+            <h1>Erreurs Fiscales Fréquentes en Suisse</h1>
+            <p class="subtitle">Le guide complet pour éviter les pièges fiscaux suisses et optimiser vos déclarations</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Pourquoi ce guide est essentiel</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">73%</span>
+                    <span class="stat-label">Des indépendants font des erreurs dans leur déclaration</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15'000 CHF</span>
+                    <span class="stat-label">Amende moyenne pour erreurs fiscales graves</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3-5 ans</span>
+                    <span class="stat-label">Délai de reprise par l'administration fiscale</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">2'500 CHF</span>
+                    <span class="stat-label">Économie moyenne en évitant ces erreurs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Error 1 -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Les 15 erreurs fiscales les plus courantes</h2>
+            
+            <div class="error-card">
+                <div class="error-number">1</div>
+                <h3>Oublier de déclarer les petits revenus accessoires</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Pénalités de 100% à 300% du montant non déclaré + intérêts moratoires
+                </div>
+                <p>Tous les revenus doivent être déclarés, même les plus petits : ventes occasionnelles, prestations ponctuelles, intérêts bancaires, dividendes.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Tenez un registre de tous vos revenus, même inférieurs à 100 CHF. Utilisez un logiciel de comptabilité simple.
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">2</div>
+                <h3>Confondre dépenses personnelles et professionnelles</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Requalification des déductions + pénalités + redressement
+                </div>
+                <p>Le mélange des finances personnelles et professionnelles est une erreur classique qui peut coûter très cher.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Comptes bancaires séparés, cartes de crédit distinctes, facturation claire et traçable.
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">3</div>
+                <h3>Sous-estimer les charges sociales indépendantes</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Dette sociale importante + pénalités + difficultés de trésorerie
+                </div>
+                <p>Beaucoup d'indépendants oublient de provisionner 10-15% de leur revenu brut pour les AVS/AI/APG/AC.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Calculer et provisionner mensuellement 12-15% du chiffre d'affaires. Utiliser les calculateurs de l'AVS.
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">4</div>
+                <h3>Oublier la TVA ou se tromper de taux</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> TVA due rétroactivement + intérêts + pénalités (jusqu'à 20'000 CHF)
+                </div>
+                <p>Seuil de 100'000 CHF de chiffre d'affaires, mais attention aux taux différents selon les prestations (7.7%, 3.7%, 2.5%).</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Suivre mensuellement votre CA, connaître les taux par type de prestation, déclarer à temps.
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">5</div>
+                <h3>Ne pas garder les justificatifs suffisamment longtemps</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Déductions refusées + redressement fiscal
+                </div>
+                <p>Les documents doivent être conservés 10 ans en Suisse. Sans preuve, pas de déduction possible.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Système de classement numérique sécurisé, sauvegardes multiples, organisation par année fiscale.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Errors -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Autres erreurs majeures à éviter</h2>
+            
+            <div class="error-card">
+                <div class="error-number">6</div>
+                <h3>Déclarer tardivement ou ne pas demander de délai</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Pénalités de 100 CHF par mois de retard + intérêts
+                </div>
+                <p>Les délais sont stricts et les pénalités automatiques. Un simple courrier peut obtenir un délai supplémentaire.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Notez les dates limites dans votre agenda, demandez un délai si nécessaire (gratuit).
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">7</div>
+                <h3>Ignorer les déductions pour frais professionnels</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Perte d'économies d'impôt importantes (jusqu'à 5'000 CHF/an)
+                </div>
+                <p>Transport, repas, vêtements de travail, formations - beaucoup de dépenses sont déductibles.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Liste complète des déductions possibles, suivi mensuel des dépenses.
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">8</div>
+                <h3>Ne pas optimiser le 3e pilier</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Perte d'économies d'impôt de 1'000 à 3'000 CHF par an
+                </div>
+                <p>Le 3e pilier A permet de déduire jusqu'à 7'056 CHF (2024) de vos revenus imposables.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Calculer votre gain fiscal optimal, verser avant la fin de l'année civile.
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">9</div>
+                <h3>Oublier de déclarer les comptes et avoirs à l'étranger</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Pénalités sévères, poursuites pénales possibles
+                </div>
+                <p>Tous les comptes, placements et avoirs à l'étranger doivent être déclarés, même sans revenus.</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Inventaire complet des avoirs étrangers, déclaration systématique.
+                </div>
+            </div>
+
+            <div class="error-card">
+                <div class="error-number">10</div>
+                <h3>Se tromper sur le statut fiscal (indépendant vs salarié)</h3>
+                <div class="error-consequence">
+                    <strong>Conséquence :</strong> Requalification avec cotisations sociales rétroactives + pénalités
+                </div>
+                <p>Le statut d'indépendant doit respecter des critères stricts (3 clients minimum, indépendance décisionnelle).</p>
+                <div class="error-solution">
+                    <strong>Solution :</strong> Vérifier les critères AVS, documenter l'indépendance, diversifier la clientèle.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prevention -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Checklist de prévention</h2>
+            <div class="prevention-box">
+                <h4>✅ Actions à mettre en place immédiatement</h4>
+                <div class="checklist">
+                    <ul>
+                        <li>Séparer complètement finances personnelles et professionnelles</li>
+                        <li>Mettre en place un système de suivi comptable mensuel</li>
+                        <li>Provisionner 15% du revenu pour charges sociales</li>
+                        <li>Créer un calendrier fiscal avec toutes les dates limites</li>
+                        <li>Scanner et classer tous les justificatifs par année</li>
+                        <li>Utiliser un logiciel de facturation professionnel</li>
+                        <li>Suivre le chiffre d'affaires pour la TVA mensuellement</li>
+                        <li>Consulter un professionnel pour les situations complexes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Besoin d'aide pour éviter ces erreurs ?</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">Nos prompts IA peuvent vous aider à identifier les erreurs avant qu'elles ne coûtent cher</p>
+            <a href="/produit-pack-prompts.html" class="cta-button">Découvrir nos outils IA fiscaux</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #1a1a1a; color: #fff; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
+                <a href="/" style="color: #9ca3af; text-decoration: none;">Accueil</a>
+                <a href="/guides/" style="color: #9ca3af; text-decoration: none;">Guides</a>
+                <a href="terms" style="color: #9ca3af; text-decoration: none;">Conditions</a>
+                <a href="contact" style="color: #9ca3af; text-decoration: none;">Contact</a>
+            </div>
+            <p style="color: #9ca3af;">&copy; 2024 Expert IA Suisse. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
