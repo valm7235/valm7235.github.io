@@ -66,7 +66,7 @@ function createNewNavbar() {
             <div class="nav-container">
                 <div class="nav-logo">
                     <a href="index">
-                        <div class="logo">Conseillers<span>IA</span> Suisse</div>
+                        <div class="logo">Expert<span>IA</span> Suisse</div>
                     </a>
                 </div>
                 <div class="nav-menu" id="navMenu">
