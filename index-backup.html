@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert IA Suisse - Pack de 3 prompts IA pour fiscalité, investissement et conformité</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script async
+    src="https://js.stripe.com/v3/buy-button.js">
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9fa;
+            /* padding-top supprimé - géré par navbar.js */
+        }
+
+        /* Navigation Bar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo a {
+            text-decoration: none;
+            color: #1e40af;
+            font-weight: 700;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo a:hover {
+            color: #dc2626;
+        }
+
+        .logo-accent {
+            color: #dc2626;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #1e40af;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #dc2626;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: #1e40af;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .login-button {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                gap: 20px;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-link {
+                padding: 15px 20px;
+                width: 100%;
+                display: block;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .nav-toggle.active .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+
+            .login-button {
+                margin-top: 10px;
+                width: 80%;
+            }
+        }
+
+        /* Animation au scroll */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e40af;
+        }
+
+        .logo span {
+            color: #dc2626;
+        }
+
+        .nav-cta {
+            background: #dc2626;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin: 40px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Problem Section */
+        .problem {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #1e40af;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #dc2626;
+        }
+
+        .problem-card h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .problem-card p {
+            color: #6b7280;
+        }
+
+        /* What You Get Section */
+        .what-you-get {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .product-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .product-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: #f1f5f9;
+            padding: 80px 0;
+        }
+
+        .advisors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .advisor-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .advisor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .advisor-icon {
+            width: 80px;
+            height: 80px;
+            background: #1e40af;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .advisor-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1e40af;
+        }
+
+        .advisor-card .price-individual {
+            color: #dc2626;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .advisor-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .advisor-features li {
+            padding: 8px 0;
+            color: #4b5563;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .advisor-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:before {
+            content: "MEILLEURE OFFRE";
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #dc2626;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card .price {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price-note {
+            font-size: 16px;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .economy-note {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            font-weight: 500;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .value-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1e40af;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #1e40af;
+            color: #fff;
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .testimonial-role {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* FAQ */
+        .faq {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            background: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e40af;
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: #6b7280;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+
+        /* Footer Responsive */
+        @media (max-width: 768px) {
+            footer {
+                padding: 30px 0;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .footer-links a {
+                display: block;
+                padding: 8px 0;
+                font-size: 16px;
+            }
+            
+            footer p {
+                font-size: 14px;
+                padding: 0 20px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .advisors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card .price {
+                font-size: 48px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 30px;
+            }
+            
+            .product-card {
+                padding: 30px 20px;
+            }
+            
+            .product-icon {
+                font-size: 40px;
+            }
+            
+            .product-card h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation sera gérée par navbar.js -->
+    <!-- Le spacer sera créé dynamiquement par navbar.js -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Expert IA suisses<br>Pack de 3 prompts pour fiscalité, investissement et conformité</h1>
+            <p>Des instructions prêtes à l'emploi pour structurer vos décisions et préparer vos échanges avec des professionnels. Disponibles 24/7 - Économisez 5 000-20 000 CHF/an en frais d'expert</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">499 CHF</span>
+                    <span class="stat-label">Au lieu de 5 000+ CHF</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Disponibles instantanément</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Experts spécialisés</span>
+                </div>
+            </div>
+            
+            <a href="#pricing" class="cta-button">Accéder aux Conseillers IA →</a>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="what-you-get">
+        <div class="container">
+            <h2 class="section-title">Ce que vous recevez exactement</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">🏦</div>
+                    <h3>Prompt fiscalité suisse</h3>
+                    <p>Pour obtenir un plan structuré, une checklist de déductions et les bonnes questions à poser selon votre situation.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">📈</div>
+                    <h3>Prompt investissement suisse</h3>
+                    <p>Pour analyser des scénarios, identifier les risques et clarifier les règles avant toute décision.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">⚖️</div>
+                    <h3>Prompt conformité & risques</h3>
+                    <p>Pour repérer les erreurs fréquentes, les points de contrôle et les documents à vérifier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="section-title">Le Problème en Suisse</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>💸 Experts Trop Chers</h3>
+                    <p>Conseiller fiscal: 200-500 CHF/heure. Conseiller financier: 150-400 CHF/heure. Coût prohibitif pour la majorité.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>⏰ Délai d'Attente</h3>
+                    <p>Rendez-vous dans 2-4 semaines minimum. Questions urgentes ? Impossible d'avoir une réponse rapide.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🎯 Accès Limité</h3>
+                    <p>Seulement disponibles en heures de bureau. Pas de suivi continu. Facturation à la minute.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>📍 Complexité Suisse</h3>
+                    <p>26 cantons, réglementations différentes. Fiscalité complexe. Obligations légales nombreuses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">Votre Solution: 3 Conseillers IA</h2>
+            <div class="advisors-grid">
+                <div class="advisor-card">
+                    <div class="advisor-icon">🏦</div>
+                    <h3>Conseiller Fiscal IA</h3>
+                    <div class="price-individual">Valeur: 299 CHF</div>
+                    <ul class="advisor-features">
+                        <li>Optimisation fiscale canton par canton</li>
+                        <li>Déductions maximales identifiées</li>
+                        <li>Stratégies d'économie d'impôts</li>
+                        <li>Planification familiale</li>
+                        <li>Économies: 2 000-15 000 CHF/an</li>
+                    </ul>
+                </div>
+                
+                <div class="advisor-card">
+                    <div class="advisor-icon">📈</div>
+                    <h3>Planificateur Financier IA</h3>
+                    <div class="price-individual">Valeur: 299 CHF</div>
+                    <ul class="advisor-features">
+                        <li>Stratégies d'investissement suisses</li>
+                        <li>Pillar 3a optimisation</li>
+                        <li>Allocation d'actifs personnalisée</li>
+                        <li>Immobilier vs placements</li>
+                        <li>Rendement: 4-12% optimisé</li>
+                    </ul>
+                </div>
+                
+                <div class="advisor-card">
+                    <div class="advisor-icon">⚖️</div>
+                    <h3>Assistant Conformité IA</h3>
+                    <div class="price-individual">Valeur: 299 CHF</div>
+                    <ul class="advisor-features">
+                        <li>Audit conformité entreprise</li>
+                        <li>Obligations légales checklist</li>
+                        <li>TVA, AVS, LPP guidance</li>
+                        <li>Risques et sanctions</li>
+                        <li>Évite 5 000-100 000 CHF amendes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-prop">
+        <div class="container">
+            <h2 class="section-title">Pourquoi Nos Conseillers IA ?</h2>
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-icon">⚡</div>
+                    <h3>Disponibles 24/7</h3>
+                    <p>Réponses instantanées. Pas de rendez-vous. Utilisez quand vous voulez.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🎯</div>
+                    <h3>Experts Suisse</h3>
+                    <p>Spécialisés pour le marché suisse. 26 cantons couverts. Réglementations à jour.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💰</div>
+                    <h3>Économies Massives</h3>
+                    <p>90% moins cher qu'un expert humain. ROI garanti sous 30 jours.</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🔄</div>
+                    <h3>Utilisations Illimitées</h3>
+                    <p>Posez autant de questions que vous voulez. Aucune limite mensuelle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Ce que Disent Nos Clients</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"J'ai économisé 8 500 CHF d'impôts la première année grâce au conseiller fiscal IA. Des conseils que mon expert ne m'avait jamais donnés."</p>
+                    <div class="testimonial-author">Marie Dubois</div>
+                    <div class="testimonial-role">Cadre, Genève</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Le planificateur financier IA m'a aidé à optimiser mon épargne. J'ai maintenant un vrai plan pour ma retraite anticipée."</p>
+                    <div class="testimonial-author">David Müller</div>
+                    <div class="testimonial-role">Entrepreneur, Zurich</div>
+                </div>
+                <div class="testimonial">
+                    <p>"L'assistant conformité m'a évité une amende de 15 000 CHF. Je découvre des obligations que j'ignorais complètement."</p>
+                    <div class="testimonial-author">Sophie Weber</div>
+                    <div class="testimonial-role">PME, Lausanne</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Pack Complet - 3 Conseillers IA</h2>
+            <div class="economy-note">
+                💡 Économisez 5 000-20 000 CHF/an en frais d'expert
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Pack Conseillers IA Suisse</h3>
+                <div class="price">499 CHF</div>
+                <div class="price-note">Prix unique - Accès à vie</div>
+                
+                <ul class="pricing-features">
+                    <li>✓ Conseiller Fiscal IA (Valeur: 299 CHF)</li>
+                    <li>✓ Planificateur Financier IA (Valeur: 299 CHF)</li>
+                    <li>✓ Assistant Conformité IA (Valeur: 299 CHF)</li>
+                    <li>✓ Utilisations illimitées</li>
+                    <li>✓ Mises à jour gratuites</li>
+                    <li>✓ Support par email</li>
+                    <li>✓ Garantie satisfait ou remboursé 30 jours, valable tant que le contenu n'a pas été téléchargé ou copié</li>
+                </ul>
+                
+                <stripe-buy-button
+                buy-button-id="buy_btn_1Sp5wdLDNyDcgPEfO4z7p3Cc"
+                publishable-key="pk_test_51RQnuDLDNyDcgPEfVxYLu35jMIO7cdrO0zd8HU4fPSlaOEfD3bK6qC9q46W33sHKaVuJsKmFJqE1vTiPxDZW6JUJ00nnryaNZ0"
+                >
+                </stripe-buy-button>
+                
+                <div class="guarantee">
+                    🔒 Paiement sécurisé par Stripe - Garantie satisfait ou remboursé 30 jours, valable tant que le contenu n'a pas été téléchargé ou copié
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Comment fonctionnent les conseillers IA ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Vous recevez 3 prompts détaillés à copier dans ChatGPT, Claude ou votre IA préférée. Chaque prompt transforme l'IA en expert suisse spécialisé. Posez vos questions et obtenez des réponses d'expert instantanément.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Est-ce légal d'utiliser ces conseillers IA ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Oui, ces conseillers fournissent des informations générales basées sur les réglementations suisses. Ils ne remplacent pas les conseils juridiques formels pour des situations complexes, mais constituent un excellent point de départ et d'optimisation.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Quel est le ROI (retour sur investissement) ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Le conseiller fiscal peut générer 2 000-15 000 CHF d'économies/an. Le planificateur financier optimise vos rendements de 4-12%. L'assistant conformité évite des amendes de 5 000-100 000 CHF. Le ROI est typiquement atteint en 1-2 utilisations.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Puis-je utiliser les conseillers pour mon entreprise ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolument ! Les conseillers sont parfaitement adaptés aux PME suisses. L'assistant conformité couvre toutes les obligations légales d'une entreprise en Suisse. De nombreuses PME utilisent ces outils pour réduire leurs coûts de conseil.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Que se passe-t-il après le paiement ?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Vous recevez instantanément un email avec les 3 prompts des conseillers IA + le guide d'utilisation détaillé. Vous pouvez commencer à utiliser vos conseillers immédiatement. Aucun abonnement, aucun frais caché.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" onclick="openPage('terms')">Conditions Générales</a>
+                <a href="#" onclick="openPage('privacy')">Politique de Confidentialité</a>
+                <a href="#" onclick="openPage('mentions-legales')">Mentions Légales</a>
+                <a href="#" onclick="openPage('contact')">Contact</a>
+                <a href="#" onclick="openPage('refund')">Garantie Remboursé</a>
+            </div>
+            <p>&copy; 2024 Expert IA Suisse. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span');
+            
+            faqItem.classList.toggle('active');
+            icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
+        }
+
+
+
+        // Legal Pages
+        function openPage(page) {
+            // Rediriger vers les pages existantes
+            switch(page) {
+                case 'terms':
+                    window.location.href = 'terms';
+                    break;
+                case 'privacy':
+                    window.location.href = 'privacy';
+                    break;
+                case 'mentions-legales':
+                    window.location.href = 'mentions-legales';
+                    break;
+                case 'contact':
+                    window.location.href = 'contact';
+                    break;
+                case 'refund':
+                    // Page garantie/garantie remboursé - rediriger vers les conditions générales section garantie
+                    window.location.href = 'terms#garantie';
+                    break;
+                default:
+                    // Si la page n'existe pas, rediriger vers l'accueil
+                    window.location.href = 'index';
+            }
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+
+        // Navigation Bar JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            // Toggle mobile menu
+            navToggle.addEventListener('click', function() {
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Active link highlighting
+            const currentPage = window.location.pathname.split('/').pop();
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+    <script src="navbar.js"></script>
+</body>
+</html>
