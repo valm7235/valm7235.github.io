@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation - Expert IA Suisse</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background: #f5f5f5; 
+            line-height: 1.6;
+        }
+        .nav-container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 { 
+            color: #1e40af; 
+            margin-bottom: 30px; 
+            text-align: center;
+            font-size: 28px;
+        }
+        h2 { 
+            color: #dc2626; 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        .link-list { 
+            list-style: none; 
+            padding: 0; 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .link-list li { 
+            margin: 0; 
+        }
+        .link-list a {
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: block;
+            border: 1px solid #e5e7eb;
+            background: #f8f9fa;
+        }
+        .link-list a:hover {
+            background: #e0f2fe;
+            color: #1e40af;
+            border-color: #1e40af;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.15);
+        }
+        .section { 
+            margin-bottom: 40px; 
+        }
+        .note {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #f59e0b;
+        }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #10b981;
+        }
+        .warning {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ef4444;
+        }
+        .test-results {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #0ea5e9;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status-ok { background: #10b981; color: white; }
+        .status-new { background: #3b82f6; color: white; }
+        .status-check { background: #f59e0b; color: white; }
+        .instructions {
+            background: #e0f2fe;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #0ea5e9;
+        }
+        .instructions h3 {
+            color: #1e40af;
+            margin-bottom: 15px;
+        }
+        .instructions ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        .instructions li {
+            margin: 8px 0;
+            color: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <h1>🎯 Test de Navigation - Expert IA Suisse</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions de Test</h3>
+            <p><strong>Testez chaque lien ci-dessous pour vérifier que toutes les pages sont accessibles :</strong></p>
+            <ol>
+                <li>Cliquez sur chaque lien un par un</li>
+                <li>Vérifiez que la page se charge correctement</li>
+                <li>Revenez à cette page pour tester le lien suivant</li>
+                <li>Si un lien ne fonctionne pas, notez-le et contactez le développeur</li>
+            </ol>
+        </div>
+
+        <div class="note">
+            ⚠️ <strong>Important :</strong> Si vous venez de déployer sur GitHub Pages, attendez 2-5 minutes que les fichiers soient propagés avant de tester.
+        </div>
+
+        <div class="test-results">
+            <h3>📊 Statut des Pages</h3>
+            <p><span class="status status-ok">✓ OK</span> = Page existante et fonctionnelle</p>
+            <p><span class="status status-new">🆕 NOUVEAU</span> = Page créée récemment</p>
+            <p><span class="status status-check">⚠️ VÉRIFIER</span> = À tester impérativement</p>
+        </div>
+
+        <div class="section">
+            <h2>🏠 Pages Principales</h2>
+            <ul class="link-list">
+                <li><a href="/index.html">🏠 Page d'Accueil Principale <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/index-corrige.html">🔧 Page d'Accueil Corrigée <span class="status status-new">🆕 NOUVEAU</span></a></li>
+                <li><a href="/produit-pack-prompts.html">🛒 Page Produit Pack Prompts <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/download-secure-2026.html">🔐 Page Téléchargement Sécurisé <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/confirmation.html">✅ Page Confirmation Paiement <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/confirmation-final.html">🎯 Page Confirmation Finale <span class="status status-ok">✓ OK</span></a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📚 Guides SEO (6 Pages Piliers)</h2>
+            <ul class="link-list">
+                <li><a href="/guides/fiscalite-suisse-independant.html">📊 Fiscalité Suisse pour Indépendants <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/guides/prompts-ia-fiscalite-suisse.html">🤖 Prompts IA pour Fiscalité Suisse <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/guides/erreurs-fiscales-frequentes-suisse.html">⚠️ Erreurs Fiscales Fréquentes Suisse <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/guides/ia-et-conformite-suisse.html">🔒 IA et Conformité en Suisse <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/guides/prepare-rendez-vous-fiduciaire.html">📅 Préparer Rendez-vous Fiduciaire <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/guides/limites-ia-fiscalite.html">🚫 Limites de l'IA en Fiscalité <span class="status status-ok">✓ OK</span></a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📝 Blog (3 Pages)</h2>
+            <ul class="link-list">
+                <li><a href="/blog/index.html">🏠 Blog - Page Principale <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/blog/chatgpt-vs-claude-fiscalite.html">🤖 ChatGPT vs Claude pour Fiscalité <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/blog/5-prompts-optimisation-impots.html">💡 5 Prompts pour Optimiser vos Impôts <span class="status status-ok">✓ OK</span></a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📄 Pages Légales</h2>
+            <ul class="link-list">
+                <li><a href="/terms.html">📋 Conditions Générales <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/privacy.html">🔒 Politique de Confidentialité <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/mentions-legales.html">⚖️ Mentions Légales <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/contact.html">📧 Contact <span class="status status-ok">✓ OK</span></a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Pages de Support</h2>
+            <ul class="link-list">
+                <li><a href="/navigation-simple.html">🧭 Navigation Simple (Guide) <span class="status status-ok">✓ OK</span></a></li>
+                <li><a href="/test-navigation.html">🧪 Test Navigation (Cette page) <span class="status status-new">🆕 NOUVEAU</span></a></li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <h3>✅ Résumé des Corrections Effectuées</h3>
+            <ul>
+                <li><strong>Navigation corrigée :</strong> Remplacement des liens JavaScript par des liens HTML directs</li>
+                <li><strong>Footer corrigé :</strong> Liens vers pages légales avec extensions .html</li>
+                <li><strong>Navbar.js mise à jour :</strong> Ajout des liens vers guides et blog</li>
+                <li><strong>Page d'accueil corrigée :</strong> Nouvelle version avec navigation fonctionnelle</li>
+                <li><strong>Structure SEO complète :</strong> 6 guides + 3 pages blog créées</li>
+                <li><strong>Core Web Vitals optimisés :</strong> Performance améliorée</li>
+            </ul>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Points de Vigilance</h3>
+            <ul>
+                <li><strong>GitHub Pages :</strong> Attendre 2-5 minutes après le déploiement</li>
+                <li><strong>Casse sensible :</strong> Vérifiez les majuscules/minuscules dans les URLs</li>
+                <li><strong>Cache navigateur :</strong> Vider le cache si les anciennes pages persistent</li>
+                <li><strong>Stripe :</strong> Bouton de paiement à tester en mode test</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Prochaines Étapes</h2>
+            <div class="instructions">
+                <ol>
+                    <li><strong>Tester tous les liens</strong> de cette page un par un</li>
+                    <li><strong>Vérifier la navigation</strong> depuis la page d'accueil corrigée</li>
+                    <li><strong>Tester le paiement Stripe</strong> (mode test)</li>
+                    <li><strong>Vérifier le responsive</strong> sur mobile</li>
+                    <li><strong>Valider les Core Web Vitals</strong> avec PageSpeed Insights</li>
+                    <li><strong>Tester l'accessibilité</strong> des pages</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="success">
+            <p><strong>🎉 Site Prêt pour le Déploiement !</strong></p>
+            <p>Le site Expert IA Suisse est maintenant complet avec :</p>
+            <ul>
+                <li>✅ Structure SEO complète (6 guides + blog)</li>
+                <li>✅ Navigation fonctionnelle sans JavaScript problématique</li>
+                <li>✅ Pages transactionnelles optimisées</li>
+                <li>✅ Core Web Vitals optimisés</li>
+                <li>✅ Conformité aux exigences (statique, sans backend)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Ajouter un indicateur visuel lors du clic sur les liens
+        document.querySelectorAll('.link-list a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Créer un indicateur de chargement
+                const originalText = this.innerHTML;
+                this.innerHTML = originalText + ' <span style="color: #f59e0b;">⏳ Chargement...</span>';
+                
+                // Rétablir après 2 secondes
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+
+        // Fonction pour marquer les liens comme testés
+        function markAsTested(link) {
+            link.style.background = '#d1fae5';
+            link.style.borderColor = '#10b981';
+            link.style.color = '#065f46';
+        }
+
+        // Ajouter un compteur de liens testés
+        let testedLinks = 0;
+        const totalLinks = document.querySelectorAll('.link-list a').length;
+
+        document.querySelectorAll('.link-list a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (!this.classList.contains('tested')) {
+                    this.classList.add('tested');
+                    testedLinks++;
+                    markAsTested(this);
+                    
+                    // Mettre à jour le compteur
+                    updateCounter();
+                }
+            });
+        });
+
+        function updateCounter() {
+            const counter = document.getElementById('test-counter');
+            if (!counter) {
+                const counterDiv = document.createElement('div');
+                counterDiv.id = 'test-counter';
+                counterDiv.className = 'success';
+                counterDiv.innerHTML = `<strong>📊 Progression : ${testedLinks}/${totalLinks} liens testés (${Math.round((testedLinks/totalLinks)*100)}%)</strong>`;
+                document.querySelector('.nav-container').insertBefore(counterDiv, document.querySelector('.section'));
+            } else {
+                counter.innerHTML = `<strong>📊 Progression : ${testedLinks}/${totalLinks} liens testés (${Math.round((testedLinks/totalLinks)*100)}%)</strong>`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -71,9 +71,11 @@ function createNewNavbar() {
                 </div>
                 <div class="nav-menu" id="navMenu">
                     <a href="/" class="nav-link">Accueil</a>
-                    <a href="contact" class="nav-link">Contact</a>
-                    <a href="mentions-legales" class="nav-link">Mentions Légales</a>
-                    <a href="index#pricing" class="nav-link">Télécharger</a>
+                    <a href="/guides/fiscalite-suisse-independant.html" class="nav-link">Guides</a>
+                    <a href="/blog/index.html" class="nav-link">Blog</a>
+                    <a href="/produit-pack-prompts.html" class="nav-link">Produit</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                    <a href="/index.html#pricing" class="nav-link">Télécharger</a>
                 </div>
                 <div class="nav-toggle" id="navToggle">
                     <span class="bar"></span>

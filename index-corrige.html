@@ -22,10 +22,10 @@
             line-height: 1.6;
             color: #1a1a1a;
             background: #f8f9fa;
-            /* padding-top supprimé - géré par navbar.js */
+            padding-top: 80px;
         }
 
-        /* Navigation Bar Styles */
+        /* Navigation Corrigée */
         .navbar {
             position: fixed;
             top: 0;
@@ -111,21 +111,19 @@
             width: 100%;
         }
 
-        .login-button {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            border: none;
+        .nav-cta {
+            background: #dc2626;
+            color: #fff;
             padding: 10px 20px;
-            border-radius: 25px;
+            border-radius: 8px;
+            text-decoration: none;
             font-weight: 600;
-            cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 14px;
         }
 
-        .login-button:hover {
+        .nav-cta:hover {
+            background: #b91c1c;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
         }
 
         .nav-toggle {
@@ -185,72 +183,13 @@
             .nav-toggle.active .bar:nth-child(3) {
                 transform: translateY(-9px) rotate(-45deg);
             }
-
-            .login-button {
-                margin-top: 10px;
-                width: 80%;
-            }
         }
 
-        /* Animation au scroll */
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        .navbar {
-            animation: slideDown 0.5s ease-out;
-        }
-
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #1e40af;
-        }
-
-        .logo span {
-            color: #dc2626;
-        }
-
-        .nav-cta {
-            background: #dc2626;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .nav-cta:hover {
-            background: #b91c1c;
-            transform: translateY(-2px);
         }
 
         /* Hero Section */
@@ -316,9 +255,8 @@
             box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
         }
 
-        /* Problem Section */
-        .problem {
-            background: #fff;
+        /* Sections */
+        .section {
             padding: 80px 0;
         }
 
@@ -330,34 +268,9 @@
             color: #1e40af;
         }
 
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .problem-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 16px;
-            border-left: 4px solid #dc2626;
-        }
-
-        .problem-card h3 {
-            color: #dc2626;
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .problem-card p {
-            color: #6b7280;
-        }
-
         /* What You Get Section */
         .what-you-get {
             background: #fff;
-            padding: 80px 0;
         }
 
         .products-grid {
@@ -400,10 +313,39 @@
             font-size: 14px;
         }
 
+        /* Problem Section */
+        .problem {
+            background: #f1f5f9;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid #dc2626;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .problem-card h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .problem-card p {
+            color: #6b7280;
+        }
+
         /* Solution Section */
         .solution {
-            background: #f1f5f9;
-            padding: 80px 0;
+            background: #fff;
         }
 
         .advisors-grid {
@@ -414,10 +356,10 @@
         }
 
         .advisor-card {
-            background: #fff;
+            background: #f8f9fa;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
         }
 
@@ -436,6 +378,7 @@
             justify-content: center;
             font-size: 36px;
             margin-bottom: 20px;
+            color: #fff;
         }
 
         .advisor-card h3 {
@@ -473,8 +416,7 @@
 
         /* Pricing Section */
         .pricing {
-            background: #fff;
-            padding: 80px 0;
+            background: #f1f5f9;
             text-align: center;
         }
 
@@ -548,10 +490,17 @@
             font-weight: 500;
         }
 
+        .guarantee {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
         /* Value Proposition */
         .value-prop {
-            background: #f8f9fa;
-            padding: 60px 0;
+            background: #fff;
         }
 
         .value-grid {
@@ -580,7 +529,6 @@
         .testimonials {
             background: #1e40af;
             color: #fff;
-            padding: 80px 0;
         }
 
         .testimonials-grid {
@@ -615,7 +563,6 @@
         /* FAQ */
         .faq {
             background: #fff;
-            padding: 80px 0;
         }
 
         .faq-item {
@@ -658,40 +605,17 @@
             justify-content: center;
             gap: 30px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
             color: #9ca3af;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
             color: #fff;
-        }
-
-
-        /* Footer Responsive */
-        @media (max-width: 768px) {
-            footer {
-                padding: 30px 0;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-                margin-bottom: 25px;
-            }
-            
-            .footer-links a {
-                display: block;
-                padding: 8px 0;
-                font-size: 16px;
-            }
-            
-            footer p {
-                font-size: 14px;
-                padding: 0 20px;
-            }
         }
 
         /* Responsive */
@@ -730,12 +654,64 @@
             .product-card h3 {
                 font-size: 18px;
             }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .footer-links a {
+                display: block;
+                padding: 8px 0;
+                font-size: 16px;
+            }
+            
+            footer p {
+                font-size: 14px;
+                padding: 0 20px;
+            }
+        }
+
+        /* Animation au scroll */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            animation: slideDown 0.5s ease-out;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation sera gérée par navbar.js -->
-    <!-- Le spacer sera créé dynamiquement par navbar.js -->
+    <!-- Navigation Corrigée avec Vrais Liens -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/index.html">
+                    Expert<span class="logo-accent">IA</span> Suisse
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="/index.html" class="nav-link">Accueil</a>
+                <a href="/guides/fiscalite-suisse-independant.html" class="nav-link">Guides</a>
+                <a href="/blog/index.html" class="nav-link">Blog</a>
+                <a href="/produit-pack-prompts.html" class="nav-link">Produit</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+                <a href="/index.html#pricing" class="nav-link">Télécharger</a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -763,7 +739,7 @@
     </section>
 
     <!-- What You Get Section -->
-    <section class="what-you-get">
+    <section class="what-you-get section">
         <div class="container">
             <h2 class="section-title">Ce que vous recevez exactement</h2>
             <div class="products-grid">
@@ -787,7 +763,7 @@
     </section>
 
     <!-- Problem Section -->
-    <section class="problem">
+    <section class="problem section">
         <div class="container">
             <h2 class="section-title">Le Problème en Suisse</h2>
             <div class="problems-grid">
@@ -812,7 +788,7 @@
     </section>
 
     <!-- Solution Section -->
-    <section class="solution">
+    <section class="solution section">
         <div class="container">
             <h2 class="section-title">Votre Solution: 3 Conseillers IA</h2>
             <div class="advisors-grid">
@@ -859,7 +835,7 @@
     </section>
 
     <!-- Value Proposition -->
-    <section class="value-prop">
+    <section class="value-prop section">
         <div class="container">
             <h2 class="section-title">Pourquoi Nos Conseillers IA ?</h2>
             <div class="value-grid">
@@ -888,9 +864,9 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials">
+    <section class="testimonials section">
         <div class="container">
-            <h2 class="section-title" style="color: #fff;">Ce que Disent Nos Clients</h2>
+            <h2 class="section-title">Ce que Disent Nos Clients</h2>
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <p>"J'ai économisé 8 500 CHF d'impôts la première année grâce au conseiller fiscal IA. Des conseils que mon expert ne m'avait jamais donnés."</p>
@@ -912,7 +888,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing section" id="pricing">
         <div class="container">
             <h2 class="section-title">Pack Complet - 3 Conseillers IA</h2>
             <div class="economy-note">
@@ -948,7 +924,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="faq">
+    <section class="faq section">
         <div class="container">
             <h2 class="section-title">Questions Fréquentes</h2>
             
@@ -1018,7 +994,6 @@
         </div>
     </footer>
 
-
     <script>
         // FAQ Toggle
         function toggleFAQ(element) {
@@ -1028,34 +1003,6 @@
             
             faqItem.classList.toggle('active');
             icon.textContent = faqItem.classList.contains('active') ? '−' : '+';
-        }
-
-
-
-        // Legal Pages - Fonction conservée pour compatibilité mais liens corrigés
-        function openPage(page) {
-            // Rediriger vers les pages existantes avec extensions .html
-            switch(page) {
-                case 'terms':
-                    window.location.href = '/terms.html';
-                    break;
-                case 'privacy':
-                    window.location.href = '/privacy.html';
-                    break;
-                case 'mentions-legales':
-                    window.location.href = '/mentions-legales.html';
-                    break;
-                case 'contact':
-                    window.location.href = '/contact.html';
-                    break;
-                case 'refund':
-                    // Page garantie/garantie remboursé - rediriger vers les conditions générales section garantie
-                    window.location.href = '/terms.html#garantie';
-                    break;
-                default:
-                    // Si la page n'existe pas, rediriger vers l'accueil
-                    window.location.href = '/index.html';
-            }
         }
 
         // Smooth Scrolling
@@ -1071,7 +1018,6 @@
                 }
             });
         });
-
 
         // Navigation Bar JavaScript
         document.addEventListener('DOMContentLoaded', function() {
@@ -1097,7 +1043,7 @@
             // Active link highlighting
             const currentPage = window.location.pathname.split('/').pop();
             navLinks.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
+                if (link.getAttribute('href') === currentPage || link.getAttribute('href') === '/' + currentPage) {
                     link.classList.add('active');
                 }
             });
@@ -1112,6 +1058,5 @@
             });
         });
     </script>
-    <script src="navbar.js"></script>
 </body>
 </html>
