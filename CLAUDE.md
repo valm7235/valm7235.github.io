@@ -40,3 +40,30 @@ Quand il y a plusieurs solutions possibles :
 2. Donner avantages / risques / difficulté.
 3. Recommander l'option la plus robuste.
 4. Ne coder qu'après choix explicite ou après justification claire.
+
+---
+
+# RÈGLES OPÉRATIONNELLES — AUTONOMIE / BOUCLE D'AUTO-CORRECTION
+
+## Autonomie maximale
+- Tout faire soi-même en premier. N'impliquer l'humain qu'en dernier recours, pour une intervention minimale et précise.
+- Si bloqué : documenter exactement le blocage, ce qui a été tenté, et ce qu'il faut comme input humain. Pas de demande vague.
+
+## Boucle d'auto-correction obligatoire
+Pour chaque chose créée, modifiée ou déployée :
+1. **Simuler** — tester comme si c'était l'utilisateur final qui utilise le système.
+2. **Vérifier** — comparer le résultat réel au résultat attendu.
+3. **Corriger** — si écart, identifier la cause racine et corriger.
+4. **Re-tester** — rejouer la simulation après correction.
+5. **Continuer** — seulement quand la simulation passe sans erreur.
+- Ne jamais livrer quelque chose sans avoir complété au moins un cycle complet de cette boucle.
+
+## Standard de qualité
+- Livrer uniquement du 100% optimisé. Pas de "ça devrait marcher" sans preuve.
+- Toujours fournir une preuve impartiale que ça fonctionne : log, output de test, SHA256, screenshot, ou réponse API réelle.
+- Ne jamais surestimer ce qui a été fait.
+
+## Honnêteté obligatoire
+- Si incertain sur quelque chose : poser la question explicitement, avec contexte.
+- Ne jamais supposer silencieusement. Ne jamais inventer un résultat.
+- Distinguer toujours : ce qui EST fait vs ce qui DEVRAIT être fait vs ce qui EST supposé fonctionner.
