@@ -1,0 +1,96 @@
+name: Telegram Relay
+
+on:
+  repository_dispatch:
+    types: [tg-send]
+
+permissions:
+  contents: write
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Send to Telegram and store result
+        run: |
+          python3 << 'PYEOF'
+          import os, json, base64, urllib.request, urllib.error, sys, time
+
+          payload  = json.loads(os.environ["PAYLOAD"])
+          bot_token = os.environ["BOT_TOKEN"]
+          gh_token  = os.environ["GH_TOKEN"]
+          gh_repo   = os.environ["GH_REPO"]
+
+          uuid       = payload.get("uuid", "")
+          method     = payload.get("method", "sendMessage")
+          chat_id    = payload.get("chat_id")
+          text       = payload.get("text", "")
+          message_id = payload.get("message_id")
+          parse_mode = payload.get("parse_mode", "HTML")
+
+          result = {"uuid": uuid, "ok": False, "message_id": None, "ts": time.time()}
+
+          if not chat_id:
+              result["error"] = "missing chat_id"
+          else:
+              body = {"chat_id": chat_id, "text": text, "parse_mode": parse_mode}
+              if method == "editMessageText" and message_id:
+                  body["message_id"] = message_id
+
+              url = f"https://api.telegram.org/bot{bot_token}/{method}"
+              print(f"→ {method} chat={chat_id}", flush=True)
+              try:
+                  req = urllib.request.Request(
+                      url,
+                      data=json.dumps(body).encode("utf-8"),
+                      headers={"Content-Type": "application/json"},
+                      method="POST",
+                  )
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      tg = json.loads(resp.read().decode())
+                  if tg.get("ok"):
+                      result["ok"] = True
+                      result["message_id"] = tg["result"].get("message_id")
+                      print(f"✓ message_id={result['message_id']}", flush=True)
+                  else:
+                      result["error"] = str(tg)
+                      print(f"TG error: {tg}", flush=True)
+                      sys.exit(1)
+              except Exception as exc:
+                  result["error"] = str(exc)
+                  print(f"Exception: {exc}", flush=True)
+                  sys.exit(1)
+
+          # Write result to repo so the bot can poll for it
+          if uuid:
+              encoded = base64.b64encode(json.dumps(result).encode()).decode()
+              api_url = (
+                  f"https://api.github.com/repos/{gh_repo}"
+                  f"/contents/relay-results/{uuid}.json"
+              )
+              put_body = {
+                  "message": f"relay result {uuid[:8]}",
+                  "content": encoded,
+              }
+              put_req = urllib.request.Request(
+                  api_url,
+                  data=json.dumps(put_body).encode(),
+                  headers={
+                      "Authorization": f"Bearer {gh_token}",
+                      "Content-Type": "application/json",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                  },
+                  method="PUT",
+              )
+              try:
+                  with urllib.request.urlopen(put_req, timeout=15) as r:
+                      print(f"Result stored for uuid={uuid[:8]}", flush=True)
+              except Exception as exc:
+                  print(f"Store failed: {exc}", flush=True)
+          PYEOF
+        env:
+          PAYLOAD:   ${{ toJson(github.event.client_payload) }}
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          GH_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO:   ${{ github.repository }}
