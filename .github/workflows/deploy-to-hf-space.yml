@@ -1,0 +1,60 @@
+name: Deploy Telegram Bot to HF Space
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "deploy" to confirm'
+        required: true
+        default: ''
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'deploy'
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Push patched telegram_bot.py to HF Space
+        run: |
+          set -e
+
+          git config --global user.email "claudebot@hf.space"
+          git config --global user.name "Claude Code Bot"
+
+          HF_SPACE="vmu7235/claudecode-kimi"
+          HF_REPO="https://vmu7235:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/${HF_SPACE}"
+
+          echo "→ Cloning HF Space..."
+          git clone "$HF_REPO" /tmp/hf-space
+          cd /tmp/hf-space
+
+          echo "→ Applying telegram_bot.py patch..."
+          cp "$GITHUB_WORKSPACE/relay-patch/telegram_bot.py" telegram_bot.py
+
+          # Verify the 3 patch markers are present
+          grep -q "TELEGRAM_RELAY_REPO" telegram_bot.py      && echo "✓ Patch 1: TELEGRAM_RELAY_REPO"
+          grep -q "repository_dispatch"  telegram_bot.py      && echo "✓ Patch 2: repository_dispatch relay"
+          grep -q "relay fallback activé" telegram_bot.py     && echo "✓ Patch 3: handle_with_transcript relay"
+
+          git add telegram_bot.py
+          git diff --cached --stat
+
+          if git diff --cached --quiet; then
+            echo "No changes — already up to date."
+          else
+            git commit -m "fix: relay Telegram via GitHub Actions when HF Space TLS is blocked
+
+HF Space DPI blocks TLS to Telegram IPs (149.154.x.x, 91.108.x.x).
+Route messages via GitHub Actions (telegram-relay.yml) as fallback.
+
+Changes:
+- Add TELEGRAM_RELAY_REPO env var support
+- relay_to_telegram() uses repository_dispatch on TELEGRAM_RELAY_REPO
+- handle_with_transcript() falls back to relay when send_initial fails"
+
+            echo "→ Pushing to HF Space..."
+            git push origin main
+            echo "✅ Deployed! HF Space will restart in ~30s."
+          fi

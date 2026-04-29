@@ -1,0 +1,77 @@
+name: Test Telegram Relay
+
+on:
+  workflow_dispatch:
+    inputs:
+      chat_id:
+        description: 'Telegram chat_id to send test to (default: 999888=simulation)'
+        required: false
+        default: '999888'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send test message directly via Telegram API
+        run: |
+          python3 << 'PYEOF'
+          import os, json, urllib.request, sys, time
+
+          bot_token = os.environ["BOT_TOKEN"]
+          chat_id   = int(os.environ.get("CHAT_ID", "999888"))
+          ts        = time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())
+
+          text = (
+              f"✅ Test relay GitHub Actions\n"
+              f"🕐 {ts}\n"
+              f"📡 Ce message a été envoyé depuis GitHub Actions\n"
+              f"(les messages Telegram de HF Space passent maintenant par ici)"
+          )
+
+          data = {"chat_id": chat_id, "text": text}
+          req = urllib.request.Request(
+              f"https://api.telegram.org/bot{bot_token}/sendMessage",
+              data=json.dumps(data).encode(),
+              headers={"Content-Type": "application/json"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  body = json.loads(resp.read().decode())
+              if body.get("ok"):
+                  print(f"✅ Test OK — message_id={body['result']['message_id']}")
+              else:
+                  print(f"❌ TG error: {body}")
+                  sys.exit(1)
+          except Exception as e:
+              print(f"❌ Exception: {e}")
+              sys.exit(1)
+          PYEOF
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID:   ${{ github.event.inputs.chat_id }}
+
+      - name: Simulate full relay flow (webhook → relay → Telegram)
+        run: |
+          SPACE="https://vmu7235-claudecode-kimi.hf.space"
+          UPDATE_ID=$((99000 + RANDOM % 999))
+
+          echo "→ Sending webhook to HF Space (update_id=$UPDATE_ID)..."
+          RESPONSE=$(curl -s -X POST "$SPACE/webhook/353df9984fff91cca94e597e37bfa0fc" \
+            -H "Content-Type: application/json" \
+            -d "{\"update_id\":$UPDATE_ID,\"message\":{\"message_id\":$UPDATE_ID,\"chat\":{\"id\":${{ github.event.inputs.chat_id }},\"type\":\"private\"},\"from\":{\"id\":${{ github.event.inputs.chat_id }},\"is_bot\":false,\"first_name\":\"TestAuto\"},\"date\":$(date +%s),\"text\":\"test relay - répondre avec: OK relay\"}}")
+
+          echo "Webhook response: $RESPONSE"
+
+          echo "→ Waiting 90s for relay to process..."
+          sleep 90
+
+          echo "→ Checking HF Space logs..."
+          curl -s "$SPACE/debug/logs" | python3 -c "
+          import sys, json
+          d = json.load(sys.stdin)
+          lines = d.get('proxy','').split('\n')
+          rel = [l for l in lines if any(k in l for k in ['relay','send_initial','chat=${{ github.event.inputs.chat_id }}','gh_relay','dispatch'])]
+          print('\n'.join(rel[-20:]))
+          "
