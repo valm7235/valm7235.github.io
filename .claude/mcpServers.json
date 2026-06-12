@@ -1,0 +1,17 @@
+{
+  "playwright": {
+    "command": "playwright-mcp",
+    "args": ["--browser", "chromium", "--headless"]
+  },
+  "chrome-devtools": {
+    "command": "chrome-devtools-mcp",
+    "args": [
+      "--headless",
+      "--isolated",
+      "--executablePath", "/opt/pw-browsers/chromium-1226/chrome-linux64/chrome",
+      "--chromeArg=--no-sandbox",
+      "--chromeArg=--disable-setuid-sandbox",
+      "--chromeArg=--disable-dev-shm-usage"
+    ]
+  }
+}
