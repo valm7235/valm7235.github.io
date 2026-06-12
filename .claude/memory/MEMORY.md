@@ -1,0 +1,11 @@
+- [Préférence linguistique française](langue_francais.md) — L'utilisateur demande que toutes les réponses soient en français.
+- [Préférence permissions - moins de prompts](feedback_permissions.md) — L'utilisateur veut que je sois autonome. Ne pas demander la permission sauf pour les suppressions.
+- [Préférence autonomie maximale](feedback_autonomie.md) — Faire tout moi-même, intervention humaine uniquement en dernier recours.
+- [Préférence boucle d'auto-correction](feedback_auto_correction.md) — Tester, simuler, corriger en boucle jusqu'à ce que ça marche parfaitement.
+- [Préférence optimisation maximale](feedback_optimisation.md) — Jamais de livrable non optimisé, viser l'excellence.
+- [Préférence honnêteté et preuves](feedback_honnetete.md) — Être honnête, fournir des preuves, poser des questions quand incertain.
+- [Règles sécurité / crypto / anti-hallucination](feedback_securite_crypto.md) — Règles strictes pour tout code sensible (auth, crypto, clés, paiements).
+- [Procédure obligatoire d'installation de skills](feedback_procedure_install_skills.md) — 9 étapes précises pour chaque installation de skill (clonage, frontmatter, tests fonctionnels, rapport).
+- [Nettoyage todo list en fin de projet](feedback_todo_cleanup.md) — Vider la todo list systématiquement à la fin de chaque projet pour garder le plan de travail propre.
+- [Autonomie totale — zero interaction humaine](feedback_minimal_interaction.md) — Agir sans jamais demander la permission. Intervention humaine uniquement apres echecs multiples personnels.
+- [Prompting Claude Code HF — Apprentissage progressif](hf_claude_code_prompting.md) — Ce qui fonctionne et ce qui ne fonctionne pas pour communiquer avec Claude Code HF. A LIRE avant chaque interaction. Inclut le protocole de fallback securise et la gestion memoire.

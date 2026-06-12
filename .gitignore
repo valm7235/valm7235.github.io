@@ -1,0 +1,3 @@
+# Secrets locaux — ne jamais committer (dépôt public)
+.claude/settings.local.json
+.playwright-mcp/
