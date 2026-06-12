@@ -40,6 +40,21 @@ Avant chaque réponse technique dans ce projet, consulte cette matrice. Si la de
 | interface skills, UI skills, npx skillui | **npxskillui** | `.claude/skills/npxskillui/SKILL.md` |
 | évolution skill, améliorer skill, skill claw | **SkillClaw** | `.claude/skills/skillclaw/SKILL.md` |
 
+| brainstormer, concevoir, design fonctionnalité, avant de coder | **brainstorming** | `.claude/skills/brainstorming/SKILL.md` |
+| agents parallèles, dispatcher, paralléliser | **dispatching-parallel-agents** | `.claude/skills/dispatching-parallel-agents/SKILL.md` |
+| exécuter plan, suivre le plan | **executing-plans** | `.claude/skills/executing-plans/SKILL.md` |
+| terminer branche, finir feature, merger | **finishing-a-development-branch** | `.claude/skills/finishing-a-development-branch/SKILL.md` |
+| recevoir review, répondre review | **receiving-code-review** | `.claude/skills/receiving-code-review/SKILL.md` |
+| demander review, code review | **requesting-code-review** | `.claude/skills/requesting-code-review/SKILL.md` |
+| développement par sous-agents | **subagent-driven-development** | `.claude/skills/subagent-driven-development/SKILL.md` |
+| debug, déboguer, bug mystérieux, diagnostic | **systematic-debugging** | `.claude/skills/systematic-debugging/SKILL.md` |
+| TDD, test d'abord, test-driven | **test-driven-development** | `.claude/skills/test-driven-development/SKILL.md` |
+| worktree, branches parallèles git | **using-git-worktrees** | `.claude/skills/using-git-worktrees/SKILL.md` |
+| superpowers, quels skills process | **using-superpowers** | `.claude/skills/using-superpowers/SKILL.md` |
+| vérifier avant de finir, verification complète | **verification-before-completion** | `.claude/skills/verification-before-completion/SKILL.md` |
+| écrire un plan, plan d'implémentation | **writing-plans** | `.claude/skills/writing-plans/SKILL.md` |
+| écrire un skill, créer skill | **writing-skills** | `.claude/skills/writing-skills/SKILL.md` |
+
 ---
 
 ## Règles d'application
@@ -51,22 +66,36 @@ Avant chaque réponse technique dans ce projet, consulte cette matrice. Si la de
 
 ## Fichiers disponibles dans `.claude/skills/`
 
-- 3gpp-skill.md
-- SkillClaw.md
-- agentic-seo.md
-- ai-life-skills.md
-- antivibe.md
-- autoskills.md
-- engineering-figure-banana.md
-- friday-showcase.md
-- harness.md
-- how.md
-- hue.md
-- logo-generator-skill.md
-- manual-SDD.md
-- marp-slides.md
-- npxskillui.md
-- paper-finder.md
-- seedance-skill.md
-- skill-based-architecture.md
-- spider-king-skill.md
+- 3gpp-skill/SKILL.md
+- agentic-seo/SKILL.md
+- ai-life-skills/SKILL.md
+- antivibe/SKILL.md
+- autoskills/SKILL.md
+- brainstorming/SKILL.md
+- dispatching-parallel-agents/SKILL.md
+- engineering-figure-banana/SKILL.md
+- executing-plans/SKILL.md
+- finishing-a-development-branch/SKILL.md
+- friday-showcase/SKILL.md
+- harness/SKILL.md
+- how/SKILL.md
+- hue/SKILL.md
+- logo-generator-skill/SKILL.md
+- manual-sdd/SKILL.md
+- marp-slides/SKILL.md
+- npxskillui/SKILL.md
+- paper-finder/SKILL.md
+- receiving-code-review/SKILL.md
+- requesting-code-review/SKILL.md
+- seedance-skill/SKILL.md
+- skill-based-architecture/SKILL.md
+- skillclaw/SKILL.md
+- spider-king-skill/SKILL.md
+- subagent-driven-development/SKILL.md
+- systematic-debugging/SKILL.md
+- test-driven-development/SKILL.md
+- using-git-worktrees/SKILL.md
+- using-superpowers/SKILL.md
+- verification-before-completion/SKILL.md
+- writing-plans/SKILL.md
+- writing-skills/SKILL.md

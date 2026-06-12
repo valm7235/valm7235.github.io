@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "playwright-mcp",
+      "args": ["--browser", "chromium", "--headless"]
+    },
+    "chrome-devtools": {
+      "command": "chrome-devtools-mcp",
+      "args": [
+        "--headless",
+        "--isolated",
+        "--executablePath", "/usr/local/bin/chromium-stable",
+        "--chromeArg=--no-sandbox",
+        "--chromeArg=--disable-setuid-sandbox",
+        "--chromeArg=--disable-dev-shm-usage"
+      ]
+    }
+  }
+}
