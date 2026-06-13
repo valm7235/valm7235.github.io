@@ -164,3 +164,37 @@ Skills officiels Anthropic installés dans `.claude/skills/` pour cette refonte 
 Le produit payant (`produit/*.md` et `download-secure-2026.html`) reste
 téléchargeable par quiconque connaît l'URL : un site statique ne peut pas vérifier
 le paiement. La livraison par e-mail reste la solution recommandée.
+
+---
+
+## Migration & parité de contenu (13 juin 2026, suite)
+
+**Découverte clé :** le vrai site client était `expert-ia-suisse.ch`, hébergé sur
+Firebase (Google Cloud, `35.219.200.3`), et non ce dépôt GitHub Pages. Firebase
+Studio fermant, le site a été **migré vers GitHub Pages**.
+
+### Parité de contenu atteinte
+Le contenu du site Firebase a été crawlé (skill `browser-live`) et répliqué dans
+le design cabinet. Pages ajoutées : `/particulier-impots`, `/independant-fiscalite`,
+`/pro-fiduciaire-avocat`, `/offre` (canonique ; `produit-pack-prompts` redirige
+vers elle), `/exemples`, `/sources-officielles`. Navigation et pied de page unifiés
+(Particuliers/Indépendants/Professionnels · Guides · Blog · Sources officielles ·
+Contact · Obtenir le pack → /offre).
+
+### Migration DNS (via API Infomaniak)
+Domaine Infomaniak id `2059077`. Les enregistrements A apex et `www` ont été
+basculés de `35.219.200.3` (Firebase) vers les 4 IP GitHub Pages
+(`185.199.108-111.153`). Enregistrements e-mail (MX, SPF, DKIM, DMARC) **inchangés**.
+`CNAME` = `expert-ia-suisse.ch` dans le dépôt. HTTPS activé automatiquement après
+propagation.
+
+### Stripe (mode test)
+Produit renommé « Pack Expert IA Suisse » (était « Conseiller IA »). Prix confirmé
+499 CHF (devise unique CHF). Le nom d'affichage du compte « ExpetIA Suisse »
+(faute de frappe) doit être corrigé dans le Dashboard Stripe (non modifiable via
+clé test).
+
+### Clés / secrets
+Fournis via variables d'environnement du conteneur (jamais committés) :
+`STRIPE_SECRET_KEY` (test), `INFOMANIAK_API_TOKEN`, `GITHUB_TOKEN`. La méthode
+correcte — ne jamais coller un secret dans le chat.
