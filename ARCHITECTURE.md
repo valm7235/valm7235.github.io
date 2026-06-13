@@ -1,5 +1,11 @@
 # Architecture du site — Expert IA Suisse
 
+> ⚠️ **Mise à jour du 13 juin 2026 — Refonte complète.** Le site public a été
+> reconstruit en **HTML/CSS statique écrit à la main** (voir section « Refonte 2026 »
+> en bas de ce document). L'analyse Next.js ci-dessous décrit l'**ancienne**
+> architecture ; elle reste pertinente pour les pages du tunnel d'achat
+> (`download-secure-2026.html`) qui dépendent encore de `_next/`.
+
 > Analyse réalisée le 12 juin 2026. Les points marqués **[VÉRIFIÉ]** ont été testés
 > en production (`https://valm7235.github.io`) ; les points marqués *[hypothèse]*
 > sont déduits du code mais non confirmés.
@@ -101,3 +107,60 @@ vers `download-secure-2026.html` → livraison des prompts.
    Le projet source (composants React, `next.config.js`) vit ailleurs — toute
    modification de contenu doit se faire là-bas puis être ré-exportée, sinon
    elle sera écrasée au prochain déploiement.
+
+---
+
+## Refonte 2026 — Nouvelle architecture (13 juin 2026)
+
+Le site public a été entièrement reconstruit pour ressembler à un site de grand
+cabinet de fiduciaire / d'avocats : sobre, institutionnel, crédible.
+
+### Stack
+- **HTML statique écrit à la main**, plus aucune dépendance Next.js/React pour
+  les pages publiques. Plus léger, plus rapide, plus facile à maintenir.
+- **CSS unique** : `assets/css/main.css` (design system complet, variables,
+  responsive, dark navy). **JS unique** : `assets/js/main.js` (menu mobile +
+  révélations au défilement avec filet de sécurité).
+- **Polices** : Newsreader (serif, titres) + Inter (texte) via Google Fonts.
+
+### Direction artistique
+- **Palette** : marine institutionnel (`#0a1e3c`), bleu royal (`#2563eb`),
+  blanc et brume claire. Conserve l'ADN bleu de l'ancien site, mais plus profond
+  et plus haut de gamme.
+- **Signature** : un bandeau « chiffres officiels 2026 » sous le héro (TVA 8,1 %,
+  pilier 3a 7'258 CHF, 26 cantons, nLPD) — chaque chiffre **sourcé** vers le site
+  officiel correspondant (AFC, ch.ch, PFPDT). C'est ce qui distingue un site
+  crédible d'une page marketing.
+- **Domaines numérotés I/II/III** comme les practice groups d'un cabinet.
+
+### Données vérifiées (juin 2026)
+Toutes les données chiffrées ont été vérifiées à des sources officielles :
+- TVA : taux normal **8,1 %** (AFC, depuis le 1.1.2024).
+- Pilier 3a : max **7'258 CHF** (salarié 2e pilier) / **36'288 CHF** (indépendant
+  sans caisse) pour 2026.
+- AVS indépendants : taux max **10 %**, cotisation min **530 CHF/an**.
+- TVA : seuil d'assujettissement **100'000 CHF** de CA.
+- nLPD en vigueur depuis le **1.9.2023**.
+- Modèles d'IA cités mis à jour : GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro.
+
+### Inventaire des pages
+- **Accueil** (`index.html`) : héro, chiffres clés, 3 domaines, problème/solution,
+  3 scénarios, tarif (Stripe), FAQ, CTA.
+- **Produit** (`produit-pack-prompts.html`), **Contact**, **Blog** (4 articles),
+  **Guides** (7 guides) — tous réécrits avec contenu rédigé et vérifié.
+- **Légal** : `mentions-legales`, `cgv`, `confidentialite` (conforme nLPD).
+- **Tunnel** : `confirmation`, `confirmation-final` (rebrandés),
+  `download-secure-2026` (inchangé, ancienne stack).
+- **404** rebrandée. **Redirections** depuis les anciennes URL anglaises
+  (`privacy`→`confidentialite`, `terms`→`cgv`, `legal`→`mentions-legales`).
+- **SEO** : `sitemap.xml`, `robots.txt`.
+
+### Skills Claude Code utilisés
+Skills officiels Anthropic installés dans `.claude/skills/` pour cette refonte :
+`frontend-design` (direction artistique), `theme-factory`, `web-artifacts-builder`,
+`webapp-testing` (vérification via Chrome DevTools).
+
+### Point de sécurité toujours ouvert
+Le produit payant (`produit/*.md` et `download-secure-2026.html`) reste
+téléchargeable par quiconque connaît l'URL : un site statique ne peut pas vérifier
+le paiement. La livraison par e-mail reste la solution recommandée.
