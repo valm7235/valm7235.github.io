@@ -309,6 +309,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .card h3 { font-size: 1.2rem; margin-top: 0.8rem; }
 .card p { font-size: 0.9rem; color: var(--slate); margin-top: 0.8rem; }
 .card .card-outcome { margin-top: auto; padding-top: 1.2rem; font-size: 0.9rem; color: var(--ink); font-weight: 500; border-top: 1px solid var(--rule); margin-top: 1.4rem; }
+a.card-outcome:hover { text-decoration: underline; }
 .disclaimer-line { font-size: 0.78125rem; color: var(--slate); margin-top: 2rem; text-align: center; font-style: italic; }
 
 /* ---------- Tarif ---------- */

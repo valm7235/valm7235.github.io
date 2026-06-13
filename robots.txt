@@ -4,4 +4,4 @@ Disallow: /download-secure-2026
 Disallow: /confirmation
 Disallow: /confirmation-final
 
-Sitemap: https://valm7235.github.io/sitemap.xml
+Sitemap: https://expert-ia-suisse.ch/sitemap.xml
